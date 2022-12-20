@@ -17,128 +17,23 @@ const Top10Swiper = () => {
         mousewheel
         pagination
     >
-        <SwiperSlide>
-            <div className="top10-swiper__elem">
-                <img src="https://avatars.mds.yandex.net/get-kinopoisk-image/1599028/4057c4b8-8208-4a04-b169-26b0661453e3/300x450" alt="" className="top10-swiper__elem__img" />
-                <div className="top10-swiper__elem__info">
-                    <h3 className="top10-swiper__elem__tittle">Зелёная миля</h3>
-                    <div className="top10-swiper__elem__info__country">Страна: США</div>
-                    <div className="top10-swiper__elem__info__genre">Жанр: Драмма</div>
-                    <div className="top10-swiper__elem__info__stage-director">Режиссёр: Фрэнк Дарабонт</div>
-                    <div className="top10-swiper__elem__info__roles">Том Хэнкс, Дэвид Морс, Майкл Кларк Дункан</div>
-                    <Link to={"/catalog/movie/"} className="watch-button">Перейти</Link>
-                </div>
-            </div>
-        </SwiperSlide>
-        <SwiperSlide>
-            <div className="top10-swiper__elem">
-                <img src="https://avatars.mds.yandex.net/get-kinopoisk-image/1599028/4057c4b8-8208-4a04-b169-26b0661453e3/300x450" alt="" className="top10-swiper__elem__img" />
-                <div className="top10-swiper__elem__info">
-                    <h3 className="top10-swiper__elem__tittle">Зелёная миля</h3>
-                    <div className="top10-swiper__elem__info__country">Страна: США</div>
-                    <div className="top10-swiper__elem__info__genre">Жанр: Драмма</div>
-                    <div className="top10-swiper__elem__info__stage-director">Режиссёр: Фрэнк Дарабонт</div>
-                    <div className="top10-swiper__elem__info__roles">Том Хэнкс, Дэвид Морс, Майкл Кларк Дункан</div>
-                </div>
-            </div>
-        </SwiperSlide>
-        <SwiperSlide>
-            <div className="top10-swiper__elem">
-                <img src="https://avatars.mds.yandex.net/get-kinopoisk-image/1599028/4057c4b8-8208-4a04-b169-26b0661453e3/300x450" alt="" className="top10-swiper__elem__img" />
-                <div className="top10-swiper__elem__info">
-                    <h3 className="top10-swiper__elem__tittle">Зелёная миля</h3>
-                    <div className="top10-swiper__elem__info__country">Страна: США</div>
-                    <div className="top10-swiper__elem__info__genre">Жанр: Драмма</div>
-                    <div className="top10-swiper__elem__info__stage-director">Режиссёр: Фрэнк Дарабонт</div>
-                    <div className="top10-swiper__elem__info__roles">Том Хэнкс, Дэвид Морс, Майкл Кларк Дункан</div>
-                </div>
-            </div>
-        </SwiperSlide>
-        <SwiperSlide>
-            <div className="top10-swiper__elem">
-                <img src="https://avatars.mds.yandex.net/get-kinopoisk-image/1599028/4057c4b8-8208-4a04-b169-26b0661453e3/300x450" alt="" className="top10-swiper__elem__img" />
-                <div className="top10-swiper__elem__info">
-                    <h3 className="top10-swiper__elem__tittle">Зелёная миля</h3>
-                    <div className="top10-swiper__elem__info__country">Страна: США</div>
-                    <div className="top10-swiper__elem__info__genre">Жанр: Драмма</div>
-                    <div className="top10-swiper__elem__info__stage-director">Режиссёр: Фрэнк Дарабонт</div>
-                    <div className="top10-swiper__elem__info__roles">Том Хэнкс, Дэвид Морс, Майкл Кларк Дункан</div>
-                </div>
-            </div>
-        </SwiperSlide>
-        <SwiperSlide>
-            <div className="top10-swiper__elem">
-                <img src="https://avatars.mds.yandex.net/get-kinopoisk-image/1599028/4057c4b8-8208-4a04-b169-26b0661453e3/300x450" alt="" className="top10-swiper__elem__img" />
-                <div className="top10-swiper__elem__info">
-                    <h3 className="top10-swiper__elem__tittle">Зелёная миля</h3>
-                    <div className="top10-swiper__elem__info__country">Страна: США</div>
-                    <div className="top10-swiper__elem__info__genre">Жанр: Драмма</div>
-                    <div className="top10-swiper__elem__info__stage-director">Режиссёр: Фрэнк Дарабонт</div>
-                    <div className="top10-swiper__elem__info__roles">Том Хэнкс, Дэвид Морс, Майкл Кларк Дункан</div>
-                </div>
-            </div>
-        </SwiperSlide>
-        <SwiperSlide>
-            <div className="top10-swiper__elem">
-                <img src="https://avatars.mds.yandex.net/get-kinopoisk-image/1599028/4057c4b8-8208-4a04-b169-26b0661453e3/300x450" alt="" className="top10-swiper__elem__img" />
-                <div className="top10-swiper__elem__info">
-                    <h3 className="top10-swiper__elem__tittle">Зелёная миля</h3>
-                    <div className="top10-swiper__elem__info__country">Страна: США</div>
-                    <div className="top10-swiper__elem__info__genre">Жанр: Драмма</div>
-                    <div className="top10-swiper__elem__info__stage-director">Режиссёр: Фрэнк Дарабонт</div>
-                    <div className="top10-swiper__elem__info__roles">Том Хэнкс, Дэвид Морс, Майкл Кларк Дункан</div>
-                </div>
-            </div>
-        </SwiperSlide>
-        <SwiperSlide>
-            <div className="top10-swiper__elem">
-                <img src="https://avatars.mds.yandex.net/get-kinopoisk-image/1599028/4057c4b8-8208-4a04-b169-26b0661453e3/300x450" alt="" className="top10-swiper__elem__img" />
-                <div className="top10-swiper__elem__info">
-                    <h3 className="top10-swiper__elem__tittle">Зелёная миля</h3>
-                    <div className="top10-swiper__elem__info__country">Страна: США</div>
-                    <div className="top10-swiper__elem__info__genre">Жанр: Драмма</div>
-                    <div className="top10-swiper__elem__info__stage-director">Режиссёр: Фрэнк Дарабонт</div>
-                    <div className="top10-swiper__elem__info__roles">Том Хэнкс, Дэвид Морс, Майкл Кларк Дункан</div>
-                </div>
-            </div>
-        </SwiperSlide>
-        <SwiperSlide>
-            <div className="top10-swiper__elem">
-                <img src="https://avatars.mds.yandex.net/get-kinopoisk-image/1599028/4057c4b8-8208-4a04-b169-26b0661453e3/300x450" alt="" className="top10-swiper__elem__img" />
-                <div className="top10-swiper__elem__info">
-                    <h3 className="top10-swiper__elem__tittle">Зелёная миля</h3>
-                    <div className="top10-swiper__elem__info__country">Страна: США</div>
-                    <div className="top10-swiper__elem__info__genre">Жанр: Драмма</div>
-                    <div className="top10-swiper__elem__info__stage-director">Режиссёр: Фрэнк Дарабонт</div>
-                    <div className="top10-swiper__elem__info__roles">Том Хэнкс, Дэвид Морс, Майкл Кларк Дункан</div>
-                </div>
-            </div>
-        </SwiperSlide>
-        <SwiperSlide>
-            <div className="top10-swiper__elem">
-                <img src="https://avatars.mds.yandex.net/get-kinopoisk-image/1599028/4057c4b8-8208-4a04-b169-26b0661453e3/300x450" alt="" className="top10-swiper__elem__img" />
-                <div className="top10-swiper__elem__info">
-                    <h3 className="top10-swiper__elem__tittle">Зелёная миля</h3>
-                    <div className="top10-swiper__elem__info__country">Страна: США</div>
-                    <div className="top10-swiper__elem__info__genre">Жанр: Драмма</div>
-                    <div className="top10-swiper__elem__info__stage-director">Режиссёр: Фрэнк Дарабонт</div>
-                    <div className="top10-swiper__elem__info__roles">Том Хэнкс, Дэвид Морс, Майкл Кларк Дункан</div>
-                </div>
-            </div>
-        </SwiperSlide>
-        <SwiperSlide>
-            <div className="top10-swiper__elem">
-                <img src="https://avatars.mds.yandex.net/get-kinopoisk-image/1599028/4057c4b8-8208-4a04-b169-26b0661453e3/300x450" alt="" className="top10-swiper__elem__img" />
-                <div className="top10-swiper__elem__info">
-                    <h3 className="top10-swiper__elem__tittle">Зелёная миля</h3>
-                    <div className="top10-swiper__elem__info__country">Страна: США</div>
-                    <div className="top10-swiper__elem__info__genre">Жанр: Драмма</div>
-                    <div className="top10-swiper__elem__info__stage-director">Режиссёр: Фрэнк Дарабонт</div>
-                    <div className="top10-swiper__elem__info__roles">Том Хэнкс, Дэвид Морс, Майкл Кларк Дункан</div>
-                </div>
-            </div>
-        </SwiperSlide>
-    
+        {
+            [...new Array(10)].map(() => (
+                <SwiperSlide>
+                    <div className="top10-swiper__elem">
+                        <img src="https://avatars.mds.yandex.net/get-kinopoisk-image/1599028/4057c4b8-8208-4a04-b169-26b0661453e3/300x450" alt="" className="top10-swiper__elem__img" />
+                        <div className="top10-swiper__elem__info">
+                            <h3 className="top10-swiper__elem__tittle">Зелёная миля</h3>
+                            <div className="top10-swiper__elem__info__country">Страна: США</div>
+                            <div className="top10-swiper__elem__info__genre">Жанр: Драмма</div>
+                            <div className="top10-swiper__elem__info__stage-director">Режиссёр: Фрэнк Дарабонт</div>
+                            <div className="top10-swiper__elem__info__roles">Том Хэнкс, Дэвид Морс, Майкл Кларк Дункан</div>
+                            <Link to={"/catalog/movie/435"} className="watch-button">Перейти</Link>
+                        </div>
+                    </div>
+                </SwiperSlide>
+            ))
+        } 
     </Swiper>
     
   )
