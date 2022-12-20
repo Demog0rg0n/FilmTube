@@ -1,0 +1,335 @@
+.App{
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+
+}
+
+.main{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding-top: 60px;
+	padding-bottom: 40px;
+	.recommendations-swiper{
+		width: 1000px;
+		height: 400px;
+		@media (max-width: 1000px){
+			max-width: 600px;
+			width: 95vw;
+			height: 700px;
+        }
+		.swiper-button-prev{
+			transform: rotate(180deg);
+		}
+		.swiper-button-next,
+		.swiper-button-prev{
+			top: 80%;
+			@media (max-width: 1000px){
+				display: none;
+			}
+		}
+		.swiper-wrapper{
+			.swiper-slide{
+				.swiper__elem{
+					display: flex;
+					justify-content: flex-end;
+					h3{
+						font-size: 24px;
+						margin-bottom: 10px;
+						color: #e13abd;
+						margin-top: 30px;
+						padding-left: 7px;
+					}
+					&__info{
+						width: 1000px;
+						height: 100%;
+						padding-top: 60px;
+						padding: 15px;
+						background: linear-gradient(90deg, #000000 45%, rgba(0, 0, 0, 0));
+						color: white;
+						text-align: left;
+						position: absolute;
+						left: 0;
+						.swiper__elem__description{
+							width: 450px;
+							max-height: 200px;
+							overflow-y: auto;
+							direction: rtl;
+							padding-left: 7px;
+							padding-right: 10px;
+							@media (max-width: 1000px){
+								width: 100%;
+								max-height: 240px;
+								max-height: 300px;
+							}
+						}
+						.swiper__elem__description::-webkit-scrollbar{
+							width: 4px;
+						}
+						.swiper__elem__description::-webkit-scrollbar-thumb{
+							background-color: #e13abd;
+							border-radius: 10px;
+						}
+						@media (max-width: 1000px){
+							width: 100%;
+							background: linear-gradient(180deg, #000000 45%, rgba(0, 0, 0, 0));
+							height: 100%;
+						}
+						@media (max-width: 600px){
+							background: linear-gradient(180deg, #000000 60%, rgba(0, 0, 0, 0));
+						}
+
+					}
+					&__img{
+						width: 600px;
+						min-height: 400px;
+						display: flex;
+						justify-content: center;
+						position: relative;
+						z-index: -1;
+						overflow: hidden;
+						background-color: #000000;
+						@media (max-width: 600px){
+							min-height: 300px;
+							width: 100%;
+						}
+						
+						img{
+							position: absolute;
+							top: 50%;
+							left: 50%;
+							transform: translate(-50%, -50%);
+							z-index: 100;
+							animation-name: swiperAnimation;
+							animation-duration: 10000ms;
+							animation-iteration-count: infinite;
+							height: 100%;
+						}
+					}
+					.watch-button{
+						font-size: 18px;
+						padding: 6px 10px;
+						display: flex;
+						align-items: center;
+						border-radius: 5px;
+						border: none;
+						position: absolute;
+						bottom: 15px;
+						cursor: pointer;
+						svg{
+							margin-right: 4px;
+						}
+					}
+					.add-button{
+						height: 36px;
+						width: 36px;
+						overflow: hidden;
+						font-size: 18px;
+						border: none;
+						border-radius: 5px;
+						display: flex;
+						align-items: center;
+						transition: .2s linear;
+						white-space: nowrap;
+						position: absolute;
+						bottom: 15px;
+						left: 150px;
+						img{
+							height: 20px;
+							margin: 8px;
+						}
+						&:hover{
+							width: 176px;
+							cursor: pointer;
+						}
+					}
+					@media (max-width: 1000px){
+						height: 700px;
+						justify-content: flex-end;
+						flex-direction: column;
+					}
+				}
+			}  
+		}   
+	}
+	.top10-swipers{
+		display: flex;
+		justify-content: space-between;
+		width: 1000px;
+		--swiper-theme-color: #e13abd;
+		align-items: center;
+		@media (max-width: 1000px) {
+			flex-direction: column;
+			width: 90vw;
+		}
+		
+		.top10-swiper__container{
+			margin-top: 50px;
+			.top10-swiper__tittle{
+				margin-bottom: 10px;
+			}
+			.top10-swiper{
+				max-width: 500px;
+				width: 470px;
+				height: 250px;
+				box-shadow: 0 0 10px 1px;
+				.swiper-button-prev{
+					transform: rotate(-90deg);
+					left: 90%;;
+					top: 35px;
+					display: none;
+				}
+				.swiper-button-next{
+					transform: rotate(90deg);
+					top: 225px;
+					display: none;
+				}
+				&__title{
+					margin-bottom: 10px;
+					@media (max-width: 1000px) {
+						max-width: 500px;
+					}
+				}
+				&__elem{
+					display: flex;
+					width: 450px;
+					height: 250px;
+					padding: 10px;
+					@media (max-width: 800px) {
+						width: 95vw;
+					}
+					&__info{
+						text-align: left;
+						margin-left: 10px;
+						h3{
+							font-size: 24px;
+							margin-bottom: 5px;
+							margin-top: 0px;
+						}
+					}
+					&__img{
+						height: 230px;
+						@media (max-width: 1000px) {
+							height: 205px;
+						}
+					}
+				}
+				@media (max-width: 1000px) {
+					width: 90vw;
+					height: 225px;
+				}
+			}
+		}
+	}
+	.catalog-link{
+		width: 1000px;
+		max-height: 500px;
+		display: flex;
+		justify-content: flex-end;
+		margin: 80px 0px;
+		overflow-x: hidden;
+		position: relative;
+
+		@media (max-width: 1000px) {
+			width: 95vw;
+		}
+		&__content{
+			width: 500px;
+			height: 500px;
+			background: linear-gradient(90deg, #000000 65%, transparent);
+			position: absolute;
+			z-index: 1000;
+			left: 0;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			padding-left: 70px;
+			&__tittle{
+				color:rgb(255, 255, 255);
+				font-size: 44px;
+			}
+			&__button{
+				background-color: rgb(255, 255, 255);
+				color: #000000;
+				text-decoration: none;
+				padding: 5px 10px;
+				font-size: 20px;
+				font-weight: 700;
+				width: fit-content;
+				margin: 10px 30px;
+
+			}
+			@media (max-width: 700px) {
+				width: 100%;
+				height: 100%;
+				background: none;
+				background-color: rgba(0, 0, 0, 0.7);
+				align-items: center;
+				padding: 0;
+
+			}
+		}
+		&__img{
+			position: relative;
+			height: 100%;
+			max-height: 500px;
+			z-index: 10;
+			@media (max-width: 500px) {
+				width: 100%;
+				height: auto;
+			}
+		}
+	}
+}
+
+
+@keyframes swiperAnimation {
+	from{
+		max-height: 550px;
+		height: 120%;
+		animation-timing-function: linear;
+		opacity: 0;
+	}
+	5%{
+		opacity: 0;
+	}
+	20%{
+		opacity: 1;
+	}
+	95%{
+		opacity: 1;
+	}
+	to{
+		height: 100%;
+		opacity: 0;
+	}
+}
+
+div .swiper-button-next,
+div .swiper-button-prev{
+	cursor: pointer;
+	z-index: 100;
+	height: 35px;
+	width: 35px;
+	border: 1px solid black;
+	border-radius: 50%;
+	color: #000000;
+	background-color: rgb(255, 255, 255);
+	background-image: url(https://cdn-icons-png.flaticon.com/512/8867/8867468.png);
+	background-size: 15px;
+	background-repeat: no-repeat;
+	background-position: center;
+	&::after{
+		content: none;
+	}
+}
+
+div .swiper-button-prev{
+	transform: rotate(180deg);
+}
+
+div .swiper-button-prev.swiper-button-disabled,
+div .swiper-button-next.swiper-button-disabled{
+	opacity: 0;
+}
