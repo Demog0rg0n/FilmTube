@@ -8,6 +8,8 @@ const Filters = () => {
   const sortState = useSelector((state: RootState) => state.catalogSlice.sortState)
   const dispatch = useDispatch()
 
+  const $popupBody = document.getElementsByClassName("popup-body")[0]
+
   const [sortOpened, setSortOpened] = React.useState(false)
 
   const sortList: sortStateType[] = [
@@ -17,18 +19,27 @@ const Filters = () => {
   ]
 	
   return (
-
     <div className="sort">
       <div>Сортировать по: <span onClick={() => {setSortOpened(!sortOpened)}}>{sortState.name}</span></div>
-      <ul className={!sortOpened? "sort-popup hidden": "sort-popup"}>
-        {sortList.map((item, index) => (
-          <li key={index + 1} onClick={() => {
-            dispatch(setSortState(item))
+      <div 
+        className={!sortOpened? "popup-body hidden": "popup-body"} 
+        onClick={(e) => {
+          if(e.currentTarget === $popupBody) {
             setSortOpened(false)
-          }}>{item.name}</li>
-        ))}
-      </ul>
+          }
+        }}>
+        <ul className={!sortOpened? "sort-popup hidden": "sort-popup"}>
+          {sortList.map((item, index) => (
+            <li key={index + 1} onClick={(e) => {
+              dispatch(setSortState(item))
+              setSortOpened(false)
+            }}>{item.name}</li>
+          ))}
+        </ul>
+      </div>
     </div>
+
+
   )
 }
 

@@ -20,7 +20,9 @@ const CatalogElem: React.FC<catalogItemProps> = (catalogItem) => {
   return (
 
     <div className='catalog-item'>
-      <img src={catalogItem.poster?.url || ""} alt="" />
+      <div className="catalog-item__img">
+        <img src={catalogItem.poster?.url || ""} alt="" />
+      </div>
       <div className="catalog-item__info">
         <h2 className='catalog-item__info__title'>{catalogItem.name || catalogItem.alternativeName}</h2>
         <div className="catalog-item__info__elem">Год: {catalogItem.year}</div>

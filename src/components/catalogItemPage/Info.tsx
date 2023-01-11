@@ -2,6 +2,17 @@ import React from 'react'
 import { catalogItemInfo } from '../../pages/CatalogItemPage'
 import InfoTittle from './InfoTittle'
 
+function formattingInfoToString(arr: {name: string}[]){
+  let result = "";
+
+  for(let item of arr){
+    result += item.name + ", "
+  }
+
+  result = result.slice(0, -2)
+  return result
+}
+
 const Info: React.FC<catalogItemInfo> = (info) => {
   return (
     <div className="info">
@@ -17,13 +28,13 @@ const Info: React.FC<catalogItemInfo> = (info) => {
               {info.countries &&
               <tr>
                 <th className='info__table__title'>Страна</th>
-                <td>{info.countries.map(country => `${country.name}, `)}</td>
+                <td>{formattingInfoToString(info.countries)}</td>
               </tr>
               }
               {info.genres &&
               <tr>
                 <th className='info__table__title'>Жанр</th>
-                <td>{info.genres.map(genre => `${genre.name} `)}</td>
+                <td>{formattingInfoToString(info.genres)}</td>
               </tr>
               }
               {info.budget.value &&
@@ -38,7 +49,7 @@ const Info: React.FC<catalogItemInfo> = (info) => {
                 <td>{info.ageRating}+</td>
               </tr>
               }
-              {
+              {info.premiere.world &&
               <tr>
                 <th className='info__table__title'>Премьера</th>
                 <td>{info.premiere.world.slice(0, 10)}</td>

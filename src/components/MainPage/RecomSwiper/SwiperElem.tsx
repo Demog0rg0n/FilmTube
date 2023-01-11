@@ -9,18 +9,6 @@ interface swiperElemProps{
 
 const SwiperElem: React.FC<swiperElemProps> = ({tittle, description, images, link}) => {
 
-  const [slideState, setSlideState] = React.useState(0)
-
-  React.useEffect(() => {
-    setTimeout(() => {
-      if(slideState >= 2){
-        setSlideState(0)
-      } else {
-        setSlideState(slideState + 1)
-      }
-    }, 10000)
-  }, [slideState])
-
   return (
       <div className="swiper__elem">
         <div className="swiper__elem__info">
@@ -35,8 +23,19 @@ const SwiperElem: React.FC<swiperElemProps> = ({tittle, description, images, lin
             Буду смотреть
           </button>
         </div>
-      	<div className="swiper__elem__img">
-          <img src={images[slideState]} alt="" />
+        <div className="swiper__elem__images">
+          <div className="swiper__elem__images__content">
+            <div className="swiper__elem__img">
+              <img src={images[0]} alt="" />
+            </div>
+            <div className="swiper__elem__img">
+              <img src={images[1]} alt="" />
+            </div>
+            <div className="swiper__elem__img">
+              <img src={images[2]} alt="" />
+            </div>
+          </div>
+          
         </div>
       </div>
   )

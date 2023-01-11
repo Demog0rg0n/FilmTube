@@ -6,12 +6,15 @@ import { useParams } from 'react-router'
 
 import Info from '../components/catalogItemPage/Info';
 import Watchability, { watchabilityType } from '../components/catalogItemPage/Watchability';
-import { trailerProps } from '../components/catalogItemPage/Trailer';
+import Trailer, { trailerProps } from '../components/catalogItemPage/Trailer';
 import PersonsSwiper from '../components/catalogItemPage/PersonsSwiper';
+import Reviews from '../components/catalogItemPage/Reviews';
+import Frames from '../components/catalogItemPage/Frames';
 
 export interface catalogItemInfo {
   name: string;
   alternativeName: string;
+  id: number;
   countries: {name: string}[];
   ageRating: number;
   persons: {
@@ -73,14 +76,11 @@ const CatalogItemPage: React.FC = () => {
   <div className="catalog-item-page__wrapper">
     <main className="main">
       <div className={info.backdrop?.url? "catalog-item-page container catalog-item-page_with-backdrop": "catalog-item-page container"}>
+
         {
         info.backdrop&&
         <div className="backdrop">
-          <div className="backdrop-gradient">
-            <div className="backdrop-gradient__left"></div>
-            <div className="backdrop-gradient__center"></div>
-            <div className="backdrop-gradient__right"></div>
-          </div>
+          <div className="backdrop-gradient"></div>
           <img src={info.backdrop.url} alt="" />
         </div>
         }
@@ -88,6 +88,7 @@ const CatalogItemPage: React.FC = () => {
         <div className="catalog-item-page__left">
           <img src={info.poster.previewUrl} alt="" />
           <Info {...info} />
+          <Frames movieId={info.id}/>
         </div>
 
         <div className="catalog-item-page__right">
@@ -95,7 +96,9 @@ const CatalogItemPage: React.FC = () => {
           <h2 className='alternativeName'>{info.alternativeName}</h2>
           <p className="description">{info.description}</p>
           <Watchability {...info.watchability} />
+          <Trailer trailers = {info.videos.trailers}/>
           <PersonsSwiper persons = {info.persons.slice(0, 10)} />
+          <Reviews movieId={info.id}/>
         </div>
         
       </div>

@@ -12,9 +12,7 @@ h3{
 .catalog-item-page {
     display: flex;
     justify-content: center;
-    align-items: center;
     color: white;
-    position: relative;
     &_with-backdrop{
         padding-top: 200px;
         @media (max-width: 800px){
@@ -23,18 +21,17 @@ h3{
     }
     .backdrop{
         position: absolute;
-        top: -60px;
+        top: 70px;
         z-index: 100;
         display: flex;
         justify-content: center;
         overflow: hidden;
-        
         &-gradient{
             width: 100%;
             height: 100%;
             position: absolute;
             background: radial-gradient(at top, rgba(0, 0, 0, 0.1), rgb(0, 0, 0) 450px);
-            @media (max-width: 800px){
+            @media (max-width: 600px){
                 background: linear-gradient(0deg, black 40px , transparent 30%);
                 background-color: rgba(0, 0, 0, 0.5);
             }
@@ -45,9 +42,10 @@ h3{
                 height: 100%;
             }
         }
-        @media (max-width: 800px){
+        @media (max-width: 1070px){
             width: 100vw;
             height: 400px;
+            left: 0;
         }
     }
     .catalog-item-page__left{
@@ -70,12 +68,39 @@ h3{
                 }   
             }
         }
+        .frames{
+            width: 360px;
+            .frames-wrapper{
+                overflow-x: auto;
+                left: 0;
+                display: flex;
+                .frame{
+                    height: 200px;
+                    margin-right: 5px;
+                    &:last-child{
+                        margin-right: 0;
+                    }
+                }
+                &::-webkit-scrollbar{
+                    height: 7px;
+                    background-color: rgb(19, 19, 19)
+                }
+                &::-webkit-scrollbar-thumb{
+                    background-color: #ffffff;
+                    cursor: pointer;
+                }
+            }
+        }
+            
+        
+        @media (max-width: 800px){
+            margin-left: 30px;
+        }
     }
 
     .catalog-item-page__right{
         margin-left: 40px;
         max-width: 800px;
-        position: relative;
         z-index: 100;
         .name {
             font-weight: 900;
@@ -114,20 +139,118 @@ h3{
         }
         .trailer-container{
             .trailer{
-                width: 600px;
-                height: 340px;
+                width: 1200px;
+                height: 600px;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+            }
+            .trailer-popup{
+                position: absolute;
+                top: 0px;
+                left: 0px;
+                width: 100%;
+                height: 100%;
+                background-color: rgba(0, 0, 0, 0.8);
+                z-index: 100;
+                
+            }
+            .watch-trailer{
+                padding: 10px 20px;
+                background-color: #ff0000;
+                color: #ffffff;
+                border: 1px solid black;
+                border-radius: 15px;
+                font-weight: 700;
+                font-size: 20px;
+                cursor: pointer;
+            }
+            .close-trailer{
+                width: 30px;
+                height: 30px;
+                position: absolute;
+                right: 100px;
+                top: 50px;
+                cursor: pointer;
             }
         }
         .persons-swiper{
-            width: 350px;
+            max-width: 600px;
             margin: 0;
             margin-bottom: 30px;
             img{
                 width: 140px;
             }
-            .persons-swiper__slide{
-                width: 112px;
+            &__slide{
+                width: 150px;
+                margin: 0;
+            }
+            @media (max-width: 1060px){
+                width: 450px;
+            }
+            @media (max-width: 900px){
+                width: 300px;
+            }
+            @media (max-width: 800px){
+                width: 600px;
+            }
+            @media (max-width: 660px){
+                width: 450px;
+            }
+            @media (max-width: 500px){
+                width: 300px
+            }
+        }
+        .reviews{
+            width: 640px;
+            &-swiper{
+                height: 350px;
+                width: 100%;
+            }
+            &__elem{
+                width: 300px;
+                height: 340px;
+                background-color: rgb(19, 19, 19);
+                padding: 10px;
+                border-radius: 15px;
+                position: relative;
+                &__name{
+                    font-size: 20px;
+                    margin-bottom: 10px;
+                }
+                &__value{
+                    height: 245px;
+                    overflow-y: hidden;
+                    padding-right: 5px;
+                    &::-webkit-scrollbar-thumb{
+                        background-color: rgb(56, 56, 56);
+                    }
+                    &::-webkit-scrollbar-track{
+                        background-color: rgb(228, 228, 228);
+                        border-radius: 10px;
+                        position: relative;
+                        right: 20px;
+                    }
+                    &::-webkit-scrollbar{
+                        width: 3px;
+                        
+                    }
+                }
+                .isDisclosed{
+                    overflow-y: scroll;
+                }
+                .disclosure-button{
+                    position: absolute;
+                    bottom: 15px;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    cursor: pointer;
+                }
                 
+            }
+            @media (max-width: 1070px){
+                width: 300px;
             }
         }
         @media (max-width: 800px){
@@ -137,5 +260,6 @@ h3{
     @media (max-width: 800px){
         flex-direction: column-reverse;
     }
+
 
 }
