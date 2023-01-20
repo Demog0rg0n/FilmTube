@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import { setCatalogType } from '../redux/slices/catalogSlice'
-import { closeMenu, setMenuState } from '../redux/slices/menuSlice'
+import { closeMenu } from '../redux/slices/menuSlice'
 import { setMobileSearchState } from '../redux/slices/searchSlice'
 import { useAppDispatch, useAppSelector } from '../redux/store'
 

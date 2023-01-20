@@ -1,4 +1,5 @@
 import React from 'react'
+
 import CatalogLink from '../components/mainPage/CatalogLink'
 
 import RecommendationsSwiper from '../components/mainPage/RecomSwiper/RecommendationsSwiper'
