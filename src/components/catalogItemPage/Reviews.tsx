@@ -14,7 +14,7 @@ export type commentType = {
     id: number;
 }
 
-const Comments: React.FC<CommentsProps> = ({movieId}) => {
+const Reviews: React.FC<CommentsProps> = ({movieId}) => {
 
     const [reviews, setReviews] = React.useState<commentType[]>([])
 
@@ -25,7 +25,7 @@ const Comments: React.FC<CommentsProps> = ({movieId}) => {
         }
 
         fetchReviews()
-    }, [])
+    }, [movieId])
 
   return (
     <>
@@ -39,8 +39,8 @@ const Comments: React.FC<CommentsProps> = ({movieId}) => {
                 spaceBetween={30}
             >
                 { 
-                    reviews?.map(review => (
-                        <SwiperSlide>
+                    reviews.map(review => (
+                        <SwiperSlide key={review.id}>
                             <CommentsSwiperSlide key={review.id} {...review} />
                         </SwiperSlide>
                     ))
@@ -54,4 +54,4 @@ const Comments: React.FC<CommentsProps> = ({movieId}) => {
   )
 }
 
-export default Comments
+export default Reviews

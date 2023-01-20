@@ -3,7 +3,8 @@ import axios from "axios";
 
 const initialState = {
     searchName: "",
-    searchItems: []
+    searchItems: [],
+    mobileSearchState: false,
 }
 
 export const fetchSearchItems = createAsyncThunk("searchItems/searchStatus", async (name: string) => {
@@ -24,8 +25,8 @@ export const searchSlice = createSlice({
         setSearchName(state, { payload }: PayloadAction<string>) {
             state.searchName = payload
         },
-        setSearchItems(state, { payload }) {
-            state.searchItems = payload
+        setMobileSearchState(state, { payload }: PayloadAction<boolean>) {
+            state.mobileSearchState = payload
         }
     },
     extraReducers: (builder) => {
@@ -35,6 +36,6 @@ export const searchSlice = createSlice({
     }
 })
 
-export const { setSearchName } = searchSlice.actions
+export const { setSearchName, setMobileSearchState } = searchSlice.actions
 
 export default searchSlice.reducer

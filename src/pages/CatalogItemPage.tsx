@@ -10,6 +10,7 @@ import Trailer, { trailerProps } from '../components/catalogItemPage/Trailer';
 import PersonsSwiper from '../components/catalogItemPage/PersonsSwiper';
 import Reviews from '../components/catalogItemPage/Reviews';
 import Frames from '../components/catalogItemPage/Frames';
+import SimilarMovies from '../components/catalogItemPage/SimilarMovies';
 
 export interface catalogItemInfo {
   name: string;
@@ -51,7 +52,13 @@ export interface catalogItemInfo {
   }
   watchability: watchabilityType;
   year: number;
-
+  similarMovies: {
+    name: string;
+    id: number;
+    poster: {
+      url: string;
+    }
+  }[]
 }
 
 const CatalogItemPage: React.FC = () => {
@@ -75,7 +82,7 @@ const CatalogItemPage: React.FC = () => {
   info?
   <div className="catalog-item-page__wrapper">
     <main className="main">
-      <div className={info.backdrop?.url? "catalog-item-page container catalog-item-page_with-backdrop": "catalog-item-page container"}>
+      <div className={`catalog-item-page container ${info.backdrop?.url && `catalog-item-page_with-backdrop`}`}>
 
         {
         info.backdrop&&
@@ -102,9 +109,10 @@ const CatalogItemPage: React.FC = () => {
         </div>
         
       </div>
+      {info.similarMovies.length && <SimilarMovies similarMovies={info.similarMovies} />}
     </main>
   </div>: 
-  <div></div>
+  <></>
   
   )
 }

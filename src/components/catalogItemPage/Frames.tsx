@@ -20,7 +20,7 @@ const Frames: React.FC<{movieId: number}> = ({movieId}) => {
                 <div className="frames-wrapper">
                 {
                     frames.map((frame) => ( 
-                        <img className='frame' src={frame.url} alt="" />
+                        <img key={frame.url} className='frame' src={frame.url} alt="" />
                     ))
                 }       
                 </div>

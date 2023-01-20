@@ -3,7 +3,7 @@ import './index.scss';
 import { Routes, Route } from 'react-router-dom';
 
 import Main from './pages/Main';
-import Header from './components/Header';
+import Header from './components/header/Header';
 import Catalog from './pages/Catalog';
 import CatalogItemPage from './pages/CatalogItemPage';
 import Menu from './components/Menu';

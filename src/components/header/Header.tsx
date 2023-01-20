@@ -1,10 +1,10 @@
 import React from 'react'
 
 import { Link } from 'react-router-dom'
-import { setMenuState } from '../redux/slices/menuSlice'
-import { useAppDispatch } from '../redux/store'
+import { setMenuState } from '../../redux/slices/menuSlice'
+import { useAppDispatch } from '../../redux/store'
 
-import '../styles/header.scss'
+import '../../styles/header.scss'
 
 import Search from './Search'
 
