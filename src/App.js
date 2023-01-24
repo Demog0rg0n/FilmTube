@@ -2,7 +2,7 @@ import './index.scss';
 
 import { Routes, Route } from 'react-router-dom';
 
-import Main from './pages/Main';
+import MainPage from './pages/MainPage';
 import Header from './components/header/Header';
 import Catalog from './pages/Catalog';
 import CatalogItemPage from './pages/CatalogItemPage';
@@ -14,7 +14,7 @@ function App() {
       <Header />
       <Menu />
       <Routes>
-        <Route path="/" element={<Main />} />
+        <Route path="/" element={<MainPage />} />
         <Route path="/catalog/:type" element={<Catalog />} />
         <Route path="/catalog/:type/:id" element={<CatalogItemPage />} />
       </Routes>

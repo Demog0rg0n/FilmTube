@@ -16,20 +16,21 @@ export interface catalogItemProps {
   }
 }
 
-const CatalogElem: React.FC<catalogItemProps> = (catalogItem) => {
+const CatalogElem: React.FC<catalogItemProps> = ({id, poster, rating, name, year, description}) => {
+  const [descriptionState, setDescriptionState] = React.useState(false)
   return (
-
     <div className='catalog-item'>
-      <div className="catalog-item__img">
-        <img src={catalogItem.poster?.url || ""} alt="" />
-      </div>
-      <div className="catalog-item__info">
-        <h2 className='catalog-item__info__title'>{catalogItem.name || catalogItem.alternativeName}</h2>
-        <div className="catalog-item__info__elem">Год: {catalogItem.year}</div>
-        <div className="catalog-item__info__elem">Время: {catalogItem.movieLength || "?"} мин.</div>
-        <div className="catalog-item__info__description">Описание: {catalogItem.shortDescription || catalogItem.description}</div>
-        <Link to={`./${catalogItem.id}`} className="watch-button">Перейти</Link>
-        <div className="catalog-item__info__rating">{catalogItem.rating.kp.toFixed(1)}</div>
+      <Link to={`./${id}`}>
+        <img className='catalog-item__img' src={poster?.url || ""} alt="" />
+        <div className="catalog-item__info">
+          <div className="catalog-item__info__rating">{rating.kp.toFixed(1)}</div>
+          <h2 className="catalog-item__info__title">{`${name} (${year})`}</h2>
+        </div>
+        <div className={`catalog-item__info__description ${ descriptionState && "catalog-item__info__description_opened"}`}>Описание:<br/> {description}</div>
+      </Link>
+      <div className={`catalog-item__info__rating description-button ${descriptionState && "description-button_active"}`} onClick={(event) => {
+        setDescriptionState(prev => !prev)
+        }}>i
       </div>
     </div>
     

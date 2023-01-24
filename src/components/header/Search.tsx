@@ -2,7 +2,7 @@ import React from 'react'
 
 import { useSelector } from 'react-redux'
 import { RootState, useAppDispatch } from '../../redux/store'
-import { fetchSearchItems, setMobileSearchState, setSearchName } from '../../redux/slices/searchSlice'
+import { fetchSearchItems, setMobileSearchState, setSearchItems, setSearchName } from '../../redux/slices/searchSlice'
 import { Link } from 'react-router-dom'
 
 type searchItemType = {
@@ -19,11 +19,12 @@ type searchItemType = {
 
 const Search = () => {
 
-  const { searchName, searchItems, mobileSearchState } = useSelector((state: RootState) => state.searchSlice)
-  const dispatch = useAppDispatch()
+  	const { searchName, searchItems, mobileSearchState } = useSelector((state: RootState) => state.searchSlice)
 
-  return (
-		<div className="search">
+  	const dispatch = useAppDispatch()
+
+  	return (
+		<div className={`search ${searchName && "search_opened"}`}>
 			<div className={`input-wrapper ${mobileSearchState && "input-wrapper_opened"}`}>
 				<input 
 					value={searchName} type="text" placeholder='Поиск'
@@ -36,10 +37,12 @@ const Search = () => {
 					onClick={() => {
 						dispatch(setSearchName(""))
 						dispatch(setMobileSearchState(false))
-					}}/>
+						dispatch(setSearchItems([]))
+					}}
+				/>
 			</div>
     		
-			{searchName &&
+			{searchItems.length > 0 &&
 			<div className="search__popup">
 				{
 					searchItems.map((item: searchItemType) => (
@@ -57,7 +60,7 @@ const Search = () => {
 			}
 			
 		</div>
-  )
+  	)
 }
 
 export default Search

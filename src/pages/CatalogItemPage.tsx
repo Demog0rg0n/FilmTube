@@ -80,38 +80,36 @@ const CatalogItemPage: React.FC = () => {
 
   return (
   info?
-  <div className="catalog-item-page__wrapper">
-    <main className="main">
-      <div className={`catalog-item-page container ${info.backdrop?.url && `catalog-item-page_with-backdrop`}`}>
-
-        {
-        info.backdrop&&
-        <div className="backdrop">
-          <div className="backdrop-gradient"></div>
-          <img src={info.backdrop.url} alt="" />
-        </div>
-        }
-      
-        <div className="catalog-item-page__left">
-          <img src={info.poster.previewUrl} alt="" />
-          <Info {...info} />
-          <Frames movieId={info.id}/>
-        </div>
-
-        <div className="catalog-item-page__right">
-          <h1 className="name">{info.name + ` (${info.year})`}</h1>
-          <h2 className='alternativeName'>{info.alternativeName}</h2>
-          <p className="description">{info.description}</p>
-          <Watchability {...info.watchability} />
-          <Trailer trailers = {info.videos.trailers}/>
-          <PersonsSwiper persons = {info.persons.slice(0, 10)} />
-          <Reviews movieId={info.id}/>
-        </div>
+    <main className="catalog-item-page">
+      <div className={`catalog-item-page__content container ${info.backdrop?.url && `catalog-item-page__content_with-backdrop`}`}>
         
-      </div>
+          {
+          info.backdrop&&
+          <div className="backdrop">
+            <div className="backdrop-gradient"></div>
+            <img src={info.backdrop.url} alt="" />
+          </div>
+          }
+        
+          <div className="catalog-item-page__left">
+            <img src={info.poster.previewUrl} alt="" />
+            <Info {...info} />
+            <Frames movieId={info.id}/>
+          </div>
+
+          <div className="catalog-item-page__right">
+            <h1 className="name">{info.name + ` (${info.year})`}</h1>
+            <h2 className='alternativeName'>{info.alternativeName}</h2>
+            <p className="description">{info.description}</p>
+            <Watchability {...info.watchability} />
+            <Trailer trailers = {info.videos.trailers}/>
+            <PersonsSwiper persons = {info.persons.slice(0, 10)} />
+            <Reviews movieId={info.id}/>
+          </div>
+
+        </div>
       {info.similarMovies.length && <SimilarMovies similarMovies={info.similarMovies} />}
-    </main>
-  </div>: 
+    </main>: 
   <></>
   
   )

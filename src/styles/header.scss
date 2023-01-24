@@ -27,8 +27,11 @@
         transform: translate(-50%, -50%);
         width: 350px;
         z-index: 101;
-        height: 550px;
-        top: 283px;
+        height: 36px;
+        &_opened{
+            height: 550px;
+            top: 283px;
+        }
         &__popup{
             background-color: white;
             box-shadow: 0 0 10px 1px;

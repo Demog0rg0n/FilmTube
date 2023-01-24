@@ -10,9 +10,18 @@ export const menuSlice = createSlice({
     reducers: {
         setMenuState(state) {
             state.menuOpened = !state.menuOpened
+            if(state.menuOpened) {
+                const $body = document.getElementsByTagName("body")[0]
+                $body.style.overflow = "hidden"
+            } else {
+                const $body = document.getElementsByTagName("body")[0]
+                $body.style.overflow = "initial"
+            }
         },
         closeMenu(state) {
             state.menuOpened = false
+            const $body = document.getElementsByTagName("body")[0]
+            $body.style.overflow = "initial"
         }
     }
 })

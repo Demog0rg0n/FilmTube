@@ -1,8 +1,11 @@
 import React from 'react'
+
 import { Link } from 'react-router-dom'
+
 import { setCatalogType } from '../redux/slices/catalogSlice'
 import { closeMenu } from '../redux/slices/menuSlice'
 import { setMobileSearchState } from '../redux/slices/searchSlice'
+
 import { useAppDispatch, useAppSelector } from '../redux/store'
 
 const Menu: React.FC = () => {

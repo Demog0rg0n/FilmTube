@@ -5,12 +5,12 @@ h3{
     color: #ffffff;
 }
 
-.catalog-item-page__wrapper{
+.catalog-item-page{
     background-color: black;
     width: 100%;
 }
 
-.catalog-item-page {
+.catalog-item-page__content {
     display: flex;
     justify-content: center;
     color: white;
@@ -107,6 +107,7 @@ h3{
     .catalog-item-page__right{
         margin-left: 40px;
         max-width: 640px;
+        width: 60%;
         z-index: 100;
         .name {
             font-weight: 900;
@@ -184,7 +185,7 @@ h3{
             }
         }
         .persons-swiper{
-            max-width: 600px;
+            width: 100%;
             margin: 0;
             margin-bottom: 30px;
             img{
@@ -201,7 +202,7 @@ h3{
                 width: 300px;
             }
             @media (max-width: 800px){
-                width: 600px;
+                width: 100%;
             }
             @media (max-width: 660px){
                 width: 450px;

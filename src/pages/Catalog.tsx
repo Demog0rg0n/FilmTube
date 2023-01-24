@@ -21,11 +21,13 @@ const Catalog: React.FC = () =>  {
   }, [sortState, catalogTypeState, pageState, dispatch])
 
   return (
-    <main className='main container'>
+    <main className='catalog'>
+      <div className="catalog__content container">
         <CatalogNav />
         <Sort />
         <CatalogItems catalogItems={catalogItems} isLoading={isLoading}/>
         <Pagination />
+      </div> 
     </main>
   )
 }

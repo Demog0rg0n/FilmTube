@@ -27,6 +27,9 @@ export const searchSlice = createSlice({
         },
         setMobileSearchState(state, { payload }: PayloadAction<boolean>) {
             state.mobileSearchState = payload
+        },
+        setSearchItems(state, { payload }: PayloadAction<[]>) {
+            state.searchItems = payload
         }
     },
     extraReducers: (builder) => {
@@ -36,6 +39,6 @@ export const searchSlice = createSlice({
     }
 })
 
-export const { setSearchName, setMobileSearchState } = searchSlice.actions
+export const { setSearchName, setMobileSearchState, setSearchItems } = searchSlice.actions
 
 export default searchSlice.reducer

@@ -34,6 +34,7 @@ function getSlidesPerView() {
 }
 
 const PersonsSwiper: React.FC<PersonsSwiperProps> = ({persons}) => {
+
   return (
     <>
     <h3>Актёры</h3>
@@ -41,7 +42,7 @@ const PersonsSwiper: React.FC<PersonsSwiperProps> = ({persons}) => {
         className="persons-swiper"
         direction='horizontal'
         slidesPerView={getSlidesPerView()}
-        spaceBetween={20}
+        spaceBetween={30}
         modules={[Navigation, Mousewheel, Pagination]}
         navigation
         mousewheel
