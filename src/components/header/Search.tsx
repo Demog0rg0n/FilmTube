@@ -24,7 +24,7 @@ const Search = () => {
   	const dispatch = useAppDispatch()
 
   	return (
-		<div className={`search ${searchName && "search_opened"}`}>
+		<div className={`search ${searchName && "search_opened"} ${mobileSearchState && "search_opened"}`}>
 			<div className={`input-wrapper ${mobileSearchState && "input-wrapper_opened"}`}>
 				<input 
 					value={searchName} type="text" placeholder='Поиск'

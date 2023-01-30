@@ -1,15 +1,25 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
 
-const CatalogLink = () => {
+import { Link } from 'react-router-dom'
+import { catalogTypeState, setCatalogType } from '../../redux/slices/catalogSlice';
+import { useAppDispatch } from '../../redux/store';
+
+interface catalogLinkProps {
+    imgSrc: string;
+    name: string;
+    linkTo: catalogTypeState;
+}
+
+const CatalogLink: React.FC<catalogLinkProps> = ({imgSrc, name, linkTo}) => {
+
+  const dispatch = useAppDispatch()
   return (
-    <div className="catalog-link">
-        <div className="catalog-link__content">
-            <h2 className="catalog-link__content__tittle">Каталог</h2>
-            <Link to={"/catalog/movies"} className="catalog-link__content__button">Перейти</Link>
+      <Link onClick={() => dispatch(setCatalogType(linkTo))} to={`./catalog/${linkTo}`}>
+        <div className="catalog-links__element">
+          <img className='catalog-links__element__img' src={imgSrc} alt="" />
+          <div className="catalog-links__element__inner">{name}</div>
         </div>
-        <img src="https://killer-antiplagiat.ru/ArticlesFiles/7405c331-1c64-4bed-b923-b99915466e20.jpg" alt="" className="catalog-link__img" />
-    </div>
+      </Link>
   )
 }
 

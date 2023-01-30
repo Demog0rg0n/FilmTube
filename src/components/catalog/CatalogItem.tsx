@@ -26,7 +26,9 @@ const CatalogElem: React.FC<catalogItemProps> = ({id, poster, rating, name, year
           <div className="catalog-item__info__rating">{rating.kp.toFixed(1)}</div>
           <h2 className="catalog-item__info__title">{`${name} (${year})`}</h2>
         </div>
-        <div className={`catalog-item__info__description ${ descriptionState && "catalog-item__info__description_opened"}`}>Описание:<br/> {description}</div>
+        <div className={`catalog-item__info__description ${ descriptionState && "catalog-item__info__description_opened"}`}>
+          <span className='catalog-item__info__description__title'>Описание:</span><br/> {description}
+        </div>
       </Link>
       <div className={`catalog-item__info__rating description-button ${descriptionState && "description-button_active"}`} onClick={(event) => {
         setDescriptionState(prev => !prev)

@@ -7,7 +7,7 @@ export type sortStateType =
   {name: 'Рейтингу', value: "rating.kp"} | 
   {name: 'Дате', value: "year&field=year&search=1970-2022&sortField=votes.kp&sortType=-1"};
 
-type catalogTypeState = "movie" | "cartoon" | "tv-series" | "anime"
+export type catalogTypeState = "movie" | "cartoon" | "tv-series" | "anime"
 
 type  catalogItemsSliceState = {
   catalogItems: catalogItemProps[]

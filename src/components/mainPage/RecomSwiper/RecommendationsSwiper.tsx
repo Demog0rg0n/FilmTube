@@ -41,22 +41,25 @@ const RecommendationsSwiper:React.FC = () => {
   }
 
   return (
-    <Swiper
-      className="recommendations-swiper"
-      slidesPerView={1}
-      modules={[Navigation]}
-      navigation
-    >
-      <SwiperSlide>
-        <SwiperElem {...slide1} />
-      </SwiperSlide>
-      <SwiperSlide>
-        <SwiperElem {...slide2} />
-      </SwiperSlide>
-      <SwiperSlide>
-        <SwiperElem {...slide3} />
-      </SwiperSlide>
-    </Swiper>
+    <div className="recommendations-swiper__wrapper">
+      <h2>Рекомендации</h2>
+      <Swiper
+        className="recommendations-swiper"
+        slidesPerView={1}
+        modules={[Navigation]}
+        navigation
+      >
+        <SwiperSlide>
+          <SwiperElem {...slide1} />
+        </SwiperSlide>
+        <SwiperSlide>
+          <SwiperElem {...slide2} />
+        </SwiperSlide>
+        <SwiperSlide>
+          <SwiperElem {...slide3} />
+        </SwiperSlide>
+      </Swiper>
+    </div>
   )
 }
 

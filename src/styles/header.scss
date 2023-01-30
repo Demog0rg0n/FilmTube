@@ -29,8 +29,11 @@
         z-index: 101;
         height: 36px;
         &_opened{
-            height: 550px;
-            top: 283px;
+            height: 565px;
+            top: 290px;
+            @media (max-width: 860px) {
+                top: 343px;
+            }
         }
         &__popup{
             background-color: white;
@@ -107,7 +110,6 @@
             font-size: 18px;
         }
         @media (max-width: 860px) {
-            top: 335px;
         }
     }
 
