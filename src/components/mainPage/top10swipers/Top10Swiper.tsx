@@ -6,7 +6,7 @@ import { Navigation, Mousewheel, Pagination } from 'swiper'
 import 'swiper/css/bundle'
 import WatchButton from '../../WatchButton'
 
-const Top10Swiper = () => {
+const Top10Swiper: React.FC = () => {
   return (
     <Swiper
         className="top10-swiper"

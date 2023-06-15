@@ -3,13 +3,15 @@ import { TypedUseSelectorHook, useDispatch, useSelector } from 'react-redux'
 
 import catalogSlice from './slices/catalogSlice'
 import searchSlice from './slices/searchSlice'
-import menuSlice from './slices/menuSlice'
+import headerSlice from './slices/headerSlice'
+import userSlice from './slices/userSlice'
 
 export const store = configureStore({
   reducer: {
     catalogSlice,
     searchSlice,
-    menuSlice,
+    headerSlice,
+    userSlice,
   },
 })
 

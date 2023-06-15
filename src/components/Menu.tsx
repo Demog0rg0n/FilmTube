@@ -3,7 +3,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 
 import { setCatalogType } from '../redux/slices/catalogSlice'
-import { closeMenu } from '../redux/slices/menuSlice'
+import { closeMenu } from '../redux/slices/headerSlice'
 import { setMobileSearchState } from '../redux/slices/searchSlice'
 
 import { useAppDispatch, useAppSelector } from '../redux/store'
@@ -17,7 +17,7 @@ const Menu: React.FC = () => {
         {name: "Аниме", value: "anime"},
       ]
 
-    const menuOpened = useAppSelector(state => state.menuSlice.menuOpened)
+    const menuOpened = useAppSelector(state => state.headerSlice.menuOpened)
   return (
     <nav className={menuOpened? 'navigation-menu navigation-menu_opened': 'navigation-menu'}>
         <div className="navigation-menu__element">

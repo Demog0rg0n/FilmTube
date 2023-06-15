@@ -1,5 +1,9 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
+import { useAppDispatch, useAppSelector } from '../../redux/store';
+import { addToViewed, addToWishList } from '../../redux/slices/userSlice';
+
+const bookmark = require("../../images/bookmark.png")
 
 export interface catalogItemProps {
   name: string;
@@ -18,6 +22,22 @@ export interface catalogItemProps {
 
 const CatalogElem: React.FC<catalogItemProps> = ({id, poster, rating, name, year, description}) => {
   const [descriptionState, setDescriptionState] = React.useState(false)
+
+  const user = useAppSelector(state => state.userSlice.user)
+  const dispatch = useAppDispatch()
+
+  function fetchToWishList(id: Number){
+    if(user) {
+      dispatch(addToWishList(id))
+    }
+  }
+  function fetchToViewed(id: Number){
+    if(user) {
+      dispatch(addToViewed(id))
+    }
+  }
+
+
   return (
     <div className='catalog-item'>
       <Link to={`./${id}`}>
@@ -34,6 +54,22 @@ const CatalogElem: React.FC<catalogItemProps> = ({id, poster, rating, name, year
         setDescriptionState(prev => !prev)
         }}>i
       </div>
+      { (!user?.user_viewed.includes(id) || !user?.user_wish_list.includes(id)) &&
+        <div className="add-to-lists">
+          <div className="add-to-lists__icon">
+            <img src={bookmark} alt="" className="add-to-lists__icon" />
+          </div>
+        
+          <div className="add-to-lists__items">
+            {
+              !user?.user_viewed.includes(id) && <div onClick={() => fetchToViewed(id)} className="add-to-lists__item">Просмотренное</div>
+            }
+            {
+              !user?.user_wish_list.includes(id) && <div onClick={() => fetchToWishList(id)} className="add-to-lists__item">Буду смотреть</div>
+            }
+          </div>
+        </div>
+      }
     </div>
     
   )

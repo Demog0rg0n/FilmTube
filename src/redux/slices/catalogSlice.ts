@@ -9,7 +9,7 @@ export type sortStateType =
 
 export type catalogTypeState = "movie" | "cartoon" | "tv-series" | "anime"
 
-type  catalogItemsSliceState = {
+type catalogItemsSliceState = {
   catalogItems: catalogItemProps[]
   sortState: sortStateType;
   catalogTypeState: catalogTypeState;

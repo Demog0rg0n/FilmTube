@@ -1,10 +1,12 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-    menuOpened: false
+    menuOpened: false,
+    popupOpened: false,
+    popupType: false,
 }
 
-export const menuSlice = createSlice({
+export const headerSlice = createSlice({
     name: "menu",
     initialState,
     reducers: {
@@ -22,10 +24,23 @@ export const menuSlice = createSlice({
             state.menuOpened = false
             const $body = document.getElementsByTagName("body")[0]
             $body.style.overflow = "initial"
+        },
+        openPopup(state) {
+            state.popupOpened = true
+            const $body = document.getElementsByTagName("body")[0]
+            $body.style.overflow = "hidden"
+        },
+        closePopup(state) {
+            state.popupOpened = false
+            const $body = document.getElementsByTagName("body")[0]
+            $body.style.overflow = "initial"
+        },
+        setPopupType(state) {
+            state.popupType = !state.popupType
         }
     }
 })
 
-export const { setMenuState, closeMenu } = menuSlice.actions
+export const { setMenuState, closeMenu, openPopup, closePopup, setPopupType } = headerSlice.actions
 
-export default menuSlice.reducer
+export default headerSlice.reducer

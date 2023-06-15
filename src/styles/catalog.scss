@@ -245,6 +245,42 @@ h1, h2, h3, h4, h5, h6{
     }
 }
 
+.add-to-lists{
+    display: flex;
+    position: absolute;
+    align-items: flex-start;
+    right: -145px;
+    transition: .2s linear;
+    z-index: 20;
+    top: 50px;
+    &__icon{
+        width: 45px;
+        height: 40px;
+        background-color: #292929;
+        border-top-left-radius: 50%;
+        border-bottom-left-radius: 50%;
+        padding: 5px;
+        img{
+            width: 30px;
+            height: 30px;
+            margin-right: auto;
+        }
+    }
+    &__items{
+        background-color: #292929;
+        padding: 10px;
+        color: #ffffff;
+        font-weight: 500;
+        width: 145px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+    &:hover{
+        right: 0;
+    }
+}
+
 .active-page{
     background-color: #ffffff;
     color: rgb(0, 0, 0);
