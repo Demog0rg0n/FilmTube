@@ -16,7 +16,7 @@ const Catalog: React.FC = () =>  {
   const dispatch = useAppDispatch()
 
   React.useEffect(() =>  {
-    const url = `https://api.kinopoisk.dev/movie?token=X2QN6H3-HE04T8F-MHEB1P5-ZDA1BNB&sortType=-1&sortField=${sortState.value}&field=type&search=${catalogTypeState}&limit=12&page=${pageState}`
+    const url = `https://api.kinopoisk.dev/v1.3/movie?token=X2QN6H3-HE04T8F-MHEB1P5-ZDA1BNB&sortType=-1&sortField=${sortState.value}&field=type&search=${catalogTypeState}&limit=12&page=${pageState}`
     dispatch(fetchCatalogItems(url))
   }, [sortState, catalogTypeState, pageState, dispatch])
 

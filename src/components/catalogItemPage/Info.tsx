@@ -37,10 +37,10 @@ const Info: React.FC<catalogItemInfo> = (info) => {
                 <td>{formattingInfoToString(info.genres)}</td>
               </tr>
               }
-              {info.budget.value &&
+              {info.budget?.value &&
               <tr>
                 <th className='info__table__title'>Бюджет</th>
-                <td>{`${info.budget.value} ${info.budget.currency}` }</td>
+                <td>{`${info.budget?.value} ${info.budget.currency}` }</td>
               </tr>
               }
               {info.ageRating &&
@@ -49,7 +49,7 @@ const Info: React.FC<catalogItemInfo> = (info) => {
                 <td>{info.ageRating}+</td>
               </tr>
               }
-              {info.premiere.world &&
+              {info.premiere?.world &&
               <tr>
                 <th className='info__table__title'>Премьера</th>
                 <td>{info.premiere.world.slice(0, 10)}</td>

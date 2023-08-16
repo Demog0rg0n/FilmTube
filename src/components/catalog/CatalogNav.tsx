@@ -25,7 +25,8 @@ const catalogTypeState = useAppSelector(state => state.catalogSlice.catalogTypeS
 			navItems.map(item => (
 				<Link 
 					onClick={() => dispatch(setCatalogType(item.value))}
-					to={"/catalog/movies"} 
+					key={item.name}
+					to={"/catalog/"} 
 					className={catalogTypeState === item.value? "catalog-nav__elem_active catalog-nav__elem": "catalog-nav__elem"}>{item.name}
 				</Link>
 			))

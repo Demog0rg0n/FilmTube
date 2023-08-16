@@ -7,7 +7,7 @@ const Frames: React.FC<{movieId: number}> = ({movieId}) => {
 
     React.useEffect(() => {
         async function fetchFrames() {
-            const { data } = await axios.get(`https://api.kinopoisk.dev/image?token=X2QN6H3-HE04T8F-MHEB1P5-ZDA1BNB&field=movieId&search=${movieId}&field=type&search=frame`)
+            const { data } = await axios.get(`https://api.kinopoisk.dev/v1/image?token=X2QN6H3-HE04T8F-MHEB1P5-ZDA1BNB&field=movieId&search=${movieId}&field=type&search=frame`)
 
             setFrames(data.docs)
         }

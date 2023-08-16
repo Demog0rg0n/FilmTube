@@ -317,7 +317,7 @@
         z-index: 200;
         flex-direction: column;
         background-color: #292929;
-        width: 220px;
+        width: 250px;
         border-radius: 20px;
         padding: 15px;
         bottom: -115px;
@@ -326,6 +326,8 @@
         a{
             text-decoration: none;
             color: #ffffff;
+            display: flex;
+            justify-content: space-between;
         }
 
     }

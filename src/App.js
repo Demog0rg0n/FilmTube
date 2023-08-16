@@ -6,11 +6,11 @@ import Catalog from './pages/Catalog';
 import CatalogItemPage from './pages/CatalogItemPage';
 import Menu from './components/Menu';
 import Popup from './components/Popup';
-import WishList from './components/WishList';
 import { useAppDispatch } from './redux/store';
 import { setUser } from './redux/slices/userSlice';
 import axios from 'axios';
 import Viewed from './pages/Viewed';
+import WishList from './pages/WishList';
 
 function App() {
   const dispatch = useAppDispatch();
@@ -36,8 +36,8 @@ function App() {
       <Menu />
       <Routes>
         <Route path="/" element={<MainPage />} />
-        <Route path="/catalog/:type" element={<Catalog />} />
-        <Route path="/catalog/:type/:id" element={<CatalogItemPage />} />
+        <Route path="/catalog/" element={<Catalog />} />
+        <Route path="/catalog/:id" element={<CatalogItemPage />} />
         <Route path="/wish-list" element={<WishList />} />
         <Route path="/viewed" element={<Viewed />} />
       </Routes>

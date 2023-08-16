@@ -1,7 +1,7 @@
 import React from 'react'
 
 import RecommendationsSwiper from '../components/mainPage/RecomSwiper/RecommendationsSwiper'
-import Top10Swipers from '../components/mainPage/top10swipers'
+import Top10Swipers from '../components/mainPage/top10swipers/Top10Swipers'
 import CatalogLinks from '../components/mainPage/CatalogLinks'
 
 const Main: React.FC = () => {

@@ -15,11 +15,11 @@ const CatalogItems: React.FC<catalogItemsProps> = ({catalogItems, isLoading}) =>
   return (
     <div className='catalog-items'>
       {
-        isLoading? [...new Array(15)].map(() => (
-          <CatalogItemLoader />
+        isLoading? [...new Array(15)].map((item, i) => (
+          <CatalogItemLoader key={i}/>
         )):
         catalogItems.map(item => (
-          <CatalogItem {...item} />
+          <CatalogItem {...item} key={item.id}/>
         ))
       }
     </div>

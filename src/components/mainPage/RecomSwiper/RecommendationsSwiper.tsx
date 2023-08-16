@@ -17,7 +17,7 @@ const RecommendationsSwiper:React.FC = () => {
       "https://img5.goodfon.ru/wallpaper/nbig/a/6d/cakes-comics-cakescomics-matt-ferguson-by-matt-ferguson-ar-5.jpg",
       "https://avatars.mds.yandex.net/get-kinopoisk-image/1900788/d850a103-ba6d-447f-8f8f-e8b07927dde4/1920x",
     ],
-    link: "",
+    link: "/catalog/328",
   }
   const slide2 = {
     tittle: "Гарри Поттер и философский камень",
@@ -27,7 +27,7 @@ const RecommendationsSwiper:React.FC = () => {
       "https://www.soyuz.ru/public/uploads/files/58/7477087/20211224105701844c33283e.jpg",
       "https://kartinkin.net/uploads/posts/2022-03/thumbs/1646971512_8-kartinkin-net-p-garri-potter-i-filosofskii-kamen-kartinki-8.jpg",
     ],
-    link: "",
+    link: "/catalog/689",
   }
   const slide3 = {
     tittle: "Звёздные войны: Эпизод 1 — Скрытая угроза",
@@ -37,7 +37,7 @@ const RecommendationsSwiper:React.FC = () => {
       "https://gamebomb.ru/files/galleries/001/3/31/396413.jpg",
       "http://avatars.mds.yandex.net/get-ott/1652588/2a0000016fb27b97beee97f93c92540dd577/orig"
     ],
-    link: "",
+    link: "/catalog/6695",
   }
 
   return (

@@ -11,28 +11,6 @@ type PersonsSwiperProps = {
     }[]
 }
 
-function getSlidesPerView() {
-    const width = window.screen.width
-    if(width > 1060) {
-        return 4
-    }
-    if(width <= 1060 && width > 900) {
-        return 3
-    }
-    if(width <= 900 && width >= 800) {
-        return 2
-    }
-    if(width <= 800 && width >= 660) {
-        return 4
-    }
-    if(width <= 660 && width >= 500) {
-        return 3
-    }
-    if(width <= 500) {
-        return 2
-    }
-}
-
 const PersonsSwiper: React.FC<PersonsSwiperProps> = ({persons}) => {
 
   return (
@@ -41,7 +19,7 @@ const PersonsSwiper: React.FC<PersonsSwiperProps> = ({persons}) => {
     <Swiper
         className="persons-swiper"
         direction='horizontal'
-        slidesPerView={getSlidesPerView()}
+        slidesPerView={"auto"}
         spaceBetween={30}
         modules={[Navigation, Mousewheel, Pagination]}
         navigation

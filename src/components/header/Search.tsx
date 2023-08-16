@@ -46,7 +46,7 @@ const Search = () => {
 			<div className="search__popup">
 				{
 					searchItems.map((item: searchItemType) => (
-						<Link onClick={() => dispatch(setSearchName(""))} to={`/catalog/${item.type}/${item.id}`} className='search__popup__item'>
+						<Link onClick={() => dispatch(setSearchName(""))} to={`/catalog/${item.id}`} className='search__popup__item'>
 							<img src={item?.poster?.url} alt="" />
 							<div className="search__popup__item__info">
 								<h4 className='search__popup__item__info__title'>{item?.name}</h4>

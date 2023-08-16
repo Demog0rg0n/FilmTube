@@ -92,101 +92,7 @@ h1, h2, h3, h4, h5, h6{
             svg{
                 margin: 14px;
             }
-            .catalog-item{
-                display: flex;
-                position: relative;
-                max-width: 234px;
-                height: 350px;
-                cursor: pointer;
-                margin: 15px;
-                overflow: hidden;
-                justify-content: center;
-                border-radius: 15px;
-                transition: .1s linear;
-                &__img{
-                    height: 350px;
-                    width: 234px;
-                    position: relative;
-                }
-                &__info{
-                    position: absolute;
-                    top: 0;
-                    width: 100%;
-                    height: 100%;
-                    background-color: rgba(21, 21, 21, 0.5);
-                    display: flex;
-                    flex-direction: column;
-                    justify-content: space-between;
-                    padding: 10px;
-                    &__title{
-                        overflow-y: auto;
-                        text-align: left;
-                        font-size: 22px;
-                        margin-top: 5px;
-                        color: #ffffff;
-                    }
-                    &__description{
-                        overflow-y: scroll;
-                        height: 100%;
-                        width: 100%;
-                        background-color: #fff;
-                        padding: 15px 10px;
-                        transition: .1s linear;
-                        word-wrap: break-word;
-                        &__title{
-                            font-weight: 900;
-                        }
-                        &::-webkit-scrollbar-track{
-                            width: 2px;
-                        }
-                        &::-webkit-scrollbar-thumb{
-                            width: 2px;
-                            background-color: #cdcdcd;
-    
-                        }
-                        &::-webkit-scrollbar{
-                            width: 2px;
-                        }
-                        &_opened{
-                            transform: translateY(-355px);
-                        }
-                    }
-                    &__rating{
-                        display: flex;
-                        justify-content: center;
-                        align-items: center;
-                        font-weight: bold;
-                        bottom: 10px;
-                        right: 10px;
-                        height: 30px;
-                        width: 30px;
-                        font-size: 14px;
-                        border-radius: 50%;
-                        border: 1px solid rgb(255, 255, 255);
-                        color: #ffffff;
-                    }
-                }
-                
-                &:hover{
-                    transform: scale(1.03);
-                }
-            } 
-            .description-button{
-                position: absolute;
-                z-index: 20;
-                right: 10px;
-                top: 10px;
-                font-weight: 900;
-                font-size: 16px;
-                &_active{
-                    border-color: #000000;
-                    color: #000000;
-                }
-                &:hover{
-                    background-color: white;
-                    color: #000000;
-                }
-            }
+
         }
         .catalog-nav{
             display: flex;
@@ -244,6 +150,104 @@ h1, h2, h3, h4, h5, h6{
         }
     }
 }
+.catalog-item{
+    display: flex;
+    position: relative;
+    max-width: 234px;
+    height: 350px;
+    cursor: pointer;
+    margin: 15px;
+    overflow: hidden;
+    justify-content: center;
+    border-radius: 15px;
+    transition: .1s linear;
+    & > a{
+        width: 234px;
+    }
+    &__img{
+        height: 350px;
+        width: 234px;
+        position: relative;
+    }
+    &__info{
+        position: absolute;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(21, 21, 21, 0.5);
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 10px;
+        &__title{
+            overflow-y: auto;
+            text-align: left;
+            font-size: 22px;
+            margin-top: 5px;
+            color: #ffffff;
+        }
+        &__description{
+            overflow-y: scroll;
+            height: 100%;
+            width: 100%;
+            background-color: #fff;
+            padding: 15px 10px;
+            transition: .1s linear;
+            word-wrap: break-word;
+            &__title{
+                font-weight: 900;
+            }
+            &::-webkit-scrollbar-track{
+                width: 2px;
+            }
+            &::-webkit-scrollbar-thumb{
+                width: 2px;
+                background-color: #cdcdcd;
+
+            }
+            &::-webkit-scrollbar{
+                width: 2px;
+            }
+            &_opened{
+                transform: translateY(-355px);
+            }
+        }
+        &__rating{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: bold;
+            bottom: 10px;
+            right: 10px;
+            height: 30px;
+            width: 30px;
+            font-size: 14px;
+            border-radius: 50%;
+            border: 1px solid rgb(255, 255, 255);
+            color: #ffffff;
+        }
+    }
+    
+    &:hover{
+        transform: scale(1.03);
+    }
+} 
+.description-button{
+    position: absolute;
+    z-index: 20;
+    right: 10px;
+    top: 10px;
+    font-weight: 900;
+    font-size: 16px;
+    &_active{
+        border-color: #000000;
+        color: #000000;
+    }
+    &:hover{
+        background-color: white;
+        color: #000000;
+    }
+}
 
 .add-to-lists{
     display: flex;
@@ -274,7 +278,7 @@ h1, h2, h3, h4, h5, h6{
         width: 145px;
         display: flex;
         flex-direction: column;
-        gap: 10px;
+        gap: 9px;
     }
     &:hover{
         right: 0;

@@ -2,18 +2,18 @@ import React from 'react'
 import { useAppDispatch, useAppSelector } from '../redux/store'
 import "../styles/viewed.css"
 import { Link } from 'react-router-dom'
-import { removeFromViewed } from '../redux/slices/userSlice'
+import { removeFromWishList } from '../redux/slices/userSlice'
 
 const bookmark = require("../images/bookmark.png")
 
-const Viewed = () => {
-    const items = useAppSelector(state => state.userSlice.user)?.user_viewed
+const WishList = () => {
+    const items = useAppSelector(state => state.userSlice.user)?.user_wish_list
     const dispatch = useAppDispatch()
 
   return (
     <div className='viewed'>
         <div className="viewed__container container">
-            <h2 className="viewed__title">Просмотренное</h2>
+            <h2 className="viewed__title">Буду смотреть</h2>
             <div className="viewed__items">
             {
                 items?.map((item, index) => (
@@ -31,7 +31,7 @@ const Viewed = () => {
                       
                         <div className="add-to-lists__items">
                           {
-                            <div onClick={() => dispatch(removeFromViewed(index))} className="add-to-lists__item">Убрать</div>
+                            <div onClick={() => dispatch(removeFromWishList(index))} className="add-to-lists__item">Убрать</div>
                           }
                         </div>
                       </div>
@@ -44,4 +44,4 @@ const Viewed = () => {
   )
 }
 
-export default Viewed
+export default WishList

@@ -5,8 +5,16 @@ import { Navigation, Mousewheel, Pagination } from 'swiper'
 
 import 'swiper/css/bundle'
 import WatchButton from '../../WatchButton'
+import { catalogItemProps } from '../../catalog/CatalogItem'
 
-const Top10Swiper: React.FC = () => {
+type top10SwiperProps = {
+    items :catalogItemProps[]
+}
+
+const Top10Swiper: React.FC<top10SwiperProps> = (props) => {
+
+    console.log(props.items)
+
   return (
     <Swiper
         className="top10-swiper"
@@ -18,14 +26,15 @@ const Top10Swiper: React.FC = () => {
         pagination
     >
         {
-            [...new Array(10)].map(() => (
-                <SwiperSlide>
+            props.items &&
+            props.items.map((item,index) => (
+                <SwiperSlide key={index}>
                     <div className="top10-swiper__elem">
-                        <img src="https://avatars.mds.yandex.net/get-kinopoisk-image/1599028/4057c4b8-8208-4a04-b169-26b0661453e3/300x450" alt="" className="top10-swiper__elem__img" />
+                        <img src={item.poster?.url} alt="" className="top10-swiper__elem__img" />
                         <div className="top10-swiper__elem__info">
-                            <h3 className="top10-swiper__elem__tittle">Зелёная миля</h3>
-                            <h4 className='alternativeName'>The Green Mile</h4>
-                            <WatchButton additionalClass='top10-swiper__button'/>
+                            <h3 className="top10-swiper__elem__tittle">{item.name}</h3>
+                            <h4 className='alternativeName'>{item.alternativeName}</h4>
+                            <WatchButton link={"/catalog/" + item.id} additionalClass='top10-swiper__button'/>
                         </div>
                     </div>
                 </SwiperSlide>

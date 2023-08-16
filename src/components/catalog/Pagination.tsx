@@ -12,8 +12,8 @@ const Pagination: React.FC = () => {
   return (
     <div className="pagination">
       {
-        pages.map(page => (
-            <div onClick={() => dispatch(setPage(page)) } className={activePage === page? "active-page pagination__elem": "pagination__elem"}>{page}</div>
+        pages.map((page, i) => (
+            <div key={i} onClick={() => dispatch(setPage(page)) } className={activePage === page? "active-page pagination__elem": "pagination__elem"}>{page}</div>
         ))
       }
     </div>

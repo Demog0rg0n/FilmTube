@@ -70,13 +70,16 @@ const CatalogItemPage: React.FC = () => {
   React.useEffect(() => {
 
     async function fetchCatalogItem() {
-      const { data } = await axios.get(`https://api.kinopoisk.dev/movie?token=X2QN6H3-HE04T8F-MHEB1P5-ZDA1BNB&field=id&search=${id}&limit=1`)
-      setInfo(data)
+      const { data } = await axios.get(`https://api.kinopoisk.dev/v1.3/movie?token=X2QN6H3-HE04T8F-MHEB1P5-ZDA1BNB&field=id&search=${id}&limit=1`)
+      setInfo(data.docs[0])
     }
 
     fetchCatalogItem()
 
   }, [id])
+
+
+  console.log(info)
 
   return (
   info?
@@ -101,14 +104,19 @@ const CatalogItemPage: React.FC = () => {
             <h1 className="name">{info.name + ` (${info.year})`}</h1>
             <h2 className='alternativeName'>{info.alternativeName}</h2>
             <p className="description">{info.description}</p>
-            <Watchability {...info.watchability} />
-            <Trailer trailers = {info.videos.trailers}/>
-            <PersonsSwiper persons = {info.persons.slice(0, 10)} />
+            {info.watchability.items.length > 1 && <Watchability {...info.watchability} />}
+            {
+              info.videos?.trailers && <Trailer trailers = {info.videos.trailers}/>
+            }
+            {
+              info.persons && <PersonsSwiper persons = {info.persons.slice(0, 10)} />
+            }
+            
             <Reviews movieId={info.id}/>
           </div>
 
         </div>
-      {info.similarMovies.length && <SimilarMovies similarMovies={info.similarMovies} />}
+      {info.similarMovies?.length && <SimilarMovies similarMovies={info.similarMovies} />}
     </main>: 
   <></>
   

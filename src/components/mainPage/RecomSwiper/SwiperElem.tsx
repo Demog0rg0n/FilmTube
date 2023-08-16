@@ -8,13 +8,13 @@ interface swiperElemProps{
   link: string;
 }
 
-const SwiperElem: React.FC<swiperElemProps> = ({tittle, description, images, link}) => {
+const SwiperElem: React.FC<swiperElemProps> = ({tittle, images, link}) => {
 
   return (
       <div className="swiper__elem">
         <div className="swiper__elem__info">
           <h4>{tittle}</h4>
-          <WatchButton additionalClass='recommendations-swiper__button'/>
+          <WatchButton link={link} additionalClass='recommendations-swiper__button'/>
         </div>
         <div className="swiper__elem__images">
           <div className="swiper__elem__images__content">

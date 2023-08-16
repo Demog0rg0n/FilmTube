@@ -20,7 +20,7 @@ const Reviews: React.FC<CommentsProps> = ({movieId}) => {
 
     React.useEffect(() => {
         async function fetchReviews() {
-            const { data } = await axios.get(`https://api.kinopoisk.dev/review?token=X2QN6H3-HE04T8F-MHEB1P5-ZDA1BNB&field=movieId&search=${movieId}`)
+            const { data } = await axios.get(`https://api.kinopoisk.dev/v1/review?token=X2QN6H3-HE04T8F-MHEB1P5-ZDA1BNB&field=movieId&search=${movieId}`)
             setReviews(data.docs)
         }
 
@@ -33,9 +33,14 @@ const Reviews: React.FC<CommentsProps> = ({movieId}) => {
             <h3>Рецензии</h3>
             <Swiper
                 className="review-swiper"
-                slidesPerView={window.screen.width > 1070? 2: 1}
+                slidesPerView={2}
                 modules={[Navigation]}
                 navigation
+                breakpoints={{
+                    1100: {
+                        slidesPerView: 1
+                    }
+                }}
                 spaceBetween={30}
             >
                 { 

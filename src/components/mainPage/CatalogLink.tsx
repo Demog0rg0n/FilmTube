@@ -14,7 +14,7 @@ const CatalogLink: React.FC<catalogLinkProps> = ({imgSrc, name, linkTo}) => {
 
   const dispatch = useAppDispatch()
   return (
-    <Link onClick={() => dispatch(setCatalogType(linkTo))} to={`./catalog/${linkTo}`}>
+    <Link onClick={() => dispatch(setCatalogType(linkTo))} to={`/catalog/`}>
       <div className="catalog-links__element">
         <img className='catalog-links__element__img' src={imgSrc} alt="" />
         <div className="catalog-links__element__inner">{name}</div>

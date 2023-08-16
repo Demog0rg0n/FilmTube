@@ -11,16 +11,17 @@ export type watchabilityType = {
   }
 
 const Watchability: React.FC<watchabilityType> = (watchability) => {
+
   return (
-    watchability.items && 
     <div className="watchability">
         <h3 className="watchability__tittle">Где смотреть:</h3>
         <div className="watchability__items">
-        {
-            watchability.items.map((item) => (
-            <a key={item.name} className='watchability__item' href={item.url}>
-                <img src={item.logo.url} alt="" />{item.name}
-            </a>
+        { watchability.items.length > 0 &&
+            watchability.items.map((item, index) => (
+              item &&
+              <a key={index} className='watchability__item' href={item?.url}>
+                  <img src={item?.logo.url} alt="" />
+              </a>
             ))
         }
         </div>
