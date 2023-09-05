@@ -70,7 +70,7 @@ const CatalogItemPage: React.FC = () => {
   React.useEffect(() => {
 
     async function fetchCatalogItem() {
-      const { data } = await axios.get(`https://api.kinopoisk.dev/v1.3/movie?token=X2QN6H3-HE04T8F-MHEB1P5-ZDA1BNB&field=id&search=${id}&limit=1`)
+      const { data } = await axios.get(`https://api.kinopoisk.dev/v1.3/movie?id=${id}&token=X2QN6H3-HE04T8F-MHEB1P5-ZDA1BNB`)
       setInfo(data.docs[0])
     }
 
@@ -136,13 +136,16 @@ const CatalogItemPage: React.FC = () => {
                         <span className="film_alternative-title">{info.alternativeName}</span>
 
                         <Info {...info}/>
-                        <Watchability {...info.watchability} />
+                        {
+                          info.watchability.items.length > 0 &&
+                          <Watchability {...info.watchability} />
+                        }
                     </div>
                 </div>
                 {
                   info.description && 
                     <div className="film__description">
-                        <h3>Описание</h3>
+                        <h2 className='film__description__title'>Описание</h2>
                         <p>{info.description}</p>
                     </div>
                 }

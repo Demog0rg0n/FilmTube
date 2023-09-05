@@ -3,6 +3,7 @@ import React from 'react'
 import { Navigation } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import CommentsSwiperSlide from './ReviewsSwiperSlide';
+import FullReviews from './FullReviews';
 
 type CommentsProps = {
     movieId: number;
@@ -20,6 +21,7 @@ export type commentType = {
 const Reviews: React.FC<CommentsProps> = ({movieId}) => {
 
     const [reviews, setReviews] = React.useState<commentType[]>([])
+    const [reviewsFull, setReviewsFull] = React.useState(false)
 
 
     React.useEffect(() => {
@@ -38,13 +40,22 @@ const Reviews: React.FC<CommentsProps> = ({movieId}) => {
             <h2 className="reviews__title">Рецензии</h2>
             <Swiper
                 className="reviews-swiper"
-                slidesPerView={3}
+                slidesPerView={1}
                 spaceBetween={10}
+
+                breakpoints={{
+                    620: {
+                        slidesPerView: 2
+                    },
+                    1080: {
+                        slidesPerView: 3
+                    },
+                }}
             >
                 { 
                     reviews.map(review => (
-                        <SwiperSlide key={review.id}>
-                            <div className="review positive">
+                        <SwiperSlide key={review.id} onClick={() => setReviewsFull(true)}>
+                            <div className="review">
                                 <div className="review__header">
                                     <h3 className="review__author">{review.author}</h3>
                                     <span className="review__date">{review.date.slice(0, 10).replaceAll("-", ".")}</span>
@@ -58,6 +69,9 @@ const Reviews: React.FC<CommentsProps> = ({movieId}) => {
                 }
             </Swiper>
         </div>
+        {reviewsFull &&
+            <FullReviews reviews={reviews} setReviewsFull={setReviewsFull}/>
+        }
     </section>
   )
 }

@@ -88,7 +88,7 @@ const CatalogElem: React.FC<catalogItemProps> = ({id, poster, rating, name, year
           poster?.url &&
             <img src={poster.url} alt="" className="catalog__item__img" />
         }
-        <span className="catalog__item__grade">{rating.kp}</span>
+        <span className="catalog__item__grade">{rating.kp.toFixed(1)}</span>
         <h3 className="catalog__item__title">{name + ` (${year})`}</h3>
     </Link>
   )

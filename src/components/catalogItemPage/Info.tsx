@@ -1,6 +1,5 @@
 import React from 'react'
 import { catalogItemInfo } from '../../pages/CatalogItemPage'
-import InfoTittle from './InfoTittle'
 
 function formattingInfoToString(arr: {name: string}[]){
   let result = "";
@@ -53,7 +52,7 @@ const Info: React.FC<catalogItemInfo> = (info) => {
             <td>{info.premiere.world.slice(0, 10)}</td>
           </tr>
           }
-          {
+          {info.movieLength &&
           <tr>
             <th>Длительность</th>
             <td>{info.movieLength} мин. / {Math.floor(info.movieLength / 60)}:{info.movieLength % 60}</td>

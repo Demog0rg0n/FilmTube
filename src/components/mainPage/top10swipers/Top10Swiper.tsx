@@ -23,6 +23,7 @@ const Top10Swiper: React.FC<top10SwiperProps> = (props) => {
         slidesPerView={1}
         modules={[Navigation, Mousewheel, Pagination]}
         mousewheel
+        spaceBetween={10}
     >
         {
             props.items &&

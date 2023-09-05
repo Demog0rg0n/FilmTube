@@ -16,19 +16,19 @@ const Frames: React.FC<{movieId: number}> = ({movieId}) => {
         fetchFrames()
     }, [movieId])
   return (
+    frames.length?
     <section className='frames'>
         <h2 className='reviews__title'>Кадры</h2>
         <Swiper
             className="frames-swiper"
             slidesPerView={"auto"}
             freeMode
-            mousewheel
             spaceBetween={10}
-            modules={[Mousewheel, FreeMode]}
+            modules={[FreeMode]}
         >
             {
-                frames.map((frame) => ( 
-                    <SwiperSlide>
+                frames.map((frame, index) => ( 
+                    <SwiperSlide key={index}>
                         <img key={frame.url} className='frame' src={frame.url} alt="" />
                     </SwiperSlide>
                 ))
@@ -36,7 +36,7 @@ const Frames: React.FC<{movieId: number}> = ({movieId}) => {
             
 
         </Swiper>
-    </section>
+    </section>: <></>
   )
 }
 

@@ -41,6 +41,7 @@
     top: 15px;
     left: 20px;
     font-size: 24px;
+    max-width: calc(100% - 40px);
 }
 .top10-swipers {
     display: flex;
@@ -172,5 +173,22 @@
         height: 300px;
     }
 }
+@media (max-width: 380px) {
+    .top10-item__img{
+        width: 110px;
+        height: 170px;
+    }
+    .top10-item{
+        height: 190px;
+    }
+    .top10-item__title{
+        font-size: 22px;
+    }
+    .category{
+        height: 250px;
+    }
+}
+
+
 
 

@@ -19,6 +19,7 @@
     font-size: 24px;
     opacity: 0.5;
 }
+
 .film__table {
     margin-top: 30px;
     width: 100%;
@@ -29,20 +30,23 @@
     display: flex;
     flex-direction: column;
     gap: 10px;
+    width: 100%;
 }
 .film__table tr{
     display: flex;
     justify-content: space-between;
+    gap: 20px;
 }
 .film__table tr td:last-child {
     font-weight: 700;
+    text-align: right;
 }
 .film__description {
     margin-top: 30px;
     font-size: 20px;
     line-height: 1.3;
 }
-.film__description h3{
+.film__description h2{
     font-size: 28px;
     margin-bottom: 15px;
 }
@@ -65,6 +69,7 @@
     padding: 15px;
     border-radius: 15px;
     background-color: #292929;
+    cursor: pointer;
 }
 .review__header {
     display: flex;
@@ -72,6 +77,9 @@
 }
 .review__author {
     font-size: 22px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 .review__date {
     font-size: 14px;
@@ -97,6 +105,113 @@
     overflow: hidden;
     text-overflow: ellipsis;
 }
+
+
+
+
+
+
+.full-review__header {
+    display: flex;
+    justify-content: space-between;
+}
+.full-review__author {
+    font-size: 22px;
+}
+.full-review__date {
+    font-size: 14px;
+}
+.full-review__title {
+    margin-bottom: 10px;
+    font-size: 18px;
+    opacity: 0.5;
+}
+.full-review__text {
+    font-size: 16px;
+    line-height: 18px;
+    max-height: 180px;
+    overflow: hidden;
+}
+
+
+
+
+.full-reviews__wrapper{
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 101;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+.full-reviews{
+    background-color: #292929;
+    width: calc(100% - 40px);
+    height: calc(100% - 40px);
+    max-width: calc(1000px);
+    max-height: 1000px;
+    border-radius: 20px;
+    padding: 20px;
+    overflow: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    scrollbar-width: 5px;
+    scrollbar-color: #626262 #3c3c3c;
+    position: relative;
+    padding-top: 50px;
+}
+.full-reviews::-webkit-scrollbar{
+    width: 5px;
+}
+.full-reviews::-webkit-scrollbar-track{
+    background-color: #626262;
+    border-radius: 10px;
+}
+.full-reviews::-webkit-scrollbar-thumb{
+    background-color: #3c3c3c;
+    border-radius: 10px;
+}
+.full-review{
+    padding: 20px;
+    border-radius: 20px;
+    background-color: #373737;
+}
+
+.full-review__button{
+    height: 40px;
+    width: 100%;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    border: none;
+    background-color: #292929;
+    margin-top: 20px;
+    color: #FFF;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.opened .full-review__text{
+    max-height: initial;
+}
+
+.full-reviews__close{
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+}
+
+
 
 
 
@@ -131,6 +246,7 @@
     gap: 10px;
     align-items: center;
     list-style: none;
+    flex-wrap: wrap;
 }
 .watchability__items li img{
     width: 50px;
@@ -138,3 +254,41 @@
     object-fit: cover;
     border-radius: 10px;
 }
+
+
+@media (max-width: 800px) {
+    .film__info{
+        flex-direction: column;
+    }
+    .film__img{
+        width: 100%;
+        max-width: initial;
+    }
+}
+@media (max-width: 500px) {
+    .film__title{
+        font-size: 34px;
+    }
+    .reviews__title,
+    .film__description h2{
+        font-size: 24px;
+    }
+    .film__description{
+        font-size: 16px;
+    }
+    .full-review__title,
+    .review__title {
+        font-size: 16px;
+    }
+    .full-review__author,
+    .review__author{
+        font-size: 20px;
+    }
+    .film__table{
+        font-size: 16px;
+    }
+    .full-review__header{
+        flex-direction: column;
+    }
+}
+

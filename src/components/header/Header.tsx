@@ -1,19 +1,30 @@
 import React from 'react'
 
-import { Link } from 'react-router-dom'
-import { openPopup, setMenuState } from '../../redux/slices/headerSlice'
 import { useAppDispatch, useAppSelector } from '../../redux/store'
 import '../../styles/header.scss'
 import Search from './Search'
-import AuthorizedUser from './AuthorizedUser'
 
 
-const authorization = require("../../images/authorization.png")
 
 const Header: React.FC = () => {
   
-  const user = useAppSelector(state => state.userSlice.user)
+//   const user = useAppSelector(state => state.userSlice.user)
   const dispatch = useAppDispatch()
+
+  let count = 0
+  React.useEffect(() => {
+    if(count == 0) {
+        const menuButton = document.querySelector(".menu-button")
+        const menu = document.querySelector(".menu")
+        menuButton?.addEventListener("click", () => {
+            menu?.classList.toggle("active")
+            menuButton?.classList.toggle("active")
+        })
+        count++
+        console.log(count)
+    }
+  }, [])
+  
 
   return (
     <header className="header">

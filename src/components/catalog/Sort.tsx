@@ -21,13 +21,6 @@ const Sort = () => {
   return (
     <div className="sort">
       <div>Сортировать по: <span onClick={() => {setSortOpened(!sortOpened)}}>{sortState.name}</span></div>
-      <div 
-        className={!sortOpened? "popup-body hidden": "popup-body"} 
-        onClick={(e) => {
-          if(e.currentTarget === $popupBody) {
-            setSortOpened(false)
-          }
-        }}>
         <ul className={!sortOpened? "sort-popup hidden": "sort-popup"}>
           {sortList.map((item, index) => (
             <li key={index + 1} onClick={(e) => {
@@ -37,7 +30,6 @@ const Sort = () => {
           ))}
         </ul>
       </div>
-    </div>
   )
 }
 

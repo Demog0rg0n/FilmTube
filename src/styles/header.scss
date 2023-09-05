@@ -132,15 +132,30 @@ input:focus{
     height: 3px;
     background-color: #fff;
     border-radius: 10px;
+    position: relative;
+    top: 0;
+    transition: .1s linear;
+}
+.active .line:nth-child(1){
+    transform: rotate(45deg);
+    top: 5px;
+}
+.active .line:nth-child(2){
+    transform: rotate(-45deg);
+    top: -5px;
+}
+.active .line:nth-child(3){
+    display: none;
 }
 @media (max-width: 670px) {
     .menu-button{
         display: flex;
+        transition: .1s linear;
     }
     .menu{
         position: fixed;
         top: 79px;
-        right: 0;
+        right: -310px;
         background-color: #292929;
         height: calc(100vh - 89px);
         z-index: 100;
@@ -148,8 +163,12 @@ input:focus{
         padding: 20px;
         gap: 20px;
         align-items: flex-end;
-        display: none;
+        transition: .1s linear;
     }
+    .menu.active{
+        right: 0;
+    }
+
     .navigation{
         display: block;
     }
