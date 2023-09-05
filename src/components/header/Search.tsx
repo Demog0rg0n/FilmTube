@@ -2,7 +2,7 @@ import React from 'react'
 
 import { useSelector } from 'react-redux'
 import { RootState, useAppDispatch } from '../../redux/store'
-import { fetchSearchItems, setMobileSearchState, setSearchItems, setSearchName } from '../../redux/slices/searchSlice'
+import { fetchSearchItems, setSearchItems, setSearchName } from '../../redux/slices/searchSlice'
 import { Link } from 'react-router-dom'
 
 type searchItemType = {
@@ -68,7 +68,7 @@ const Search = () => {
 			placeholder="Поиск"
 			value={searchName}
 			onChange={(event) => {
-				if(event.target.value != "") {
+				if(event.target.value !== "") {
 					dispatch(fetchSearchItems(event.target.value))
 					dispatch(setSearchName(event.target.value))
 

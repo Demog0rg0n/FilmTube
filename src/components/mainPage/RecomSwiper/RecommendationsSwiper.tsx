@@ -28,7 +28,7 @@ const RecommendationsSwiper:React.FC = () => {
   }
 
   return (
-    <div className="swipers__block">
+    <div className="swipers__block recomendations__block">
       <h2 className="swiper-title">Рекомендации</h2>
       <Swiper
         className="recomendations-swiper"

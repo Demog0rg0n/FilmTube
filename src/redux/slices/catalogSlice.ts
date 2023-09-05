@@ -15,6 +15,7 @@ type catalogItemsSliceState = {
   catalogTypeState: catalogTypeState;
   pageState: number;
   isLoading: boolean;
+  pagesCounter: number
 }
 
 const initialState: catalogItemsSliceState = {
@@ -23,10 +24,14 @@ const initialState: catalogItemsSliceState = {
   catalogTypeState: "movie",
   pageState: 1,
   isLoading: true,
-
+  pagesCounter: 1,
 }
 
 export const fetchCatalogItems = createAsyncThunk("catalogItems/fetchStatus", async (url: string) => {
+  const { data } = await axios.get(url)
+  return data.docs
+})
+export const fetchMoreCatalogItems = createAsyncThunk("moreCatalogItems/fetchMoreStatus", async (url: string) => {
   const { data } = await axios.get(url)
   return data.docs
 })
@@ -52,10 +57,15 @@ export const catalogSlice = createSlice({
   extraReducers(builder) {
     builder.addCase(fetchCatalogItems.fulfilled, (state, { payload }) => {
       state.catalogItems = payload
+      state.pagesCounter = payload
       state.isLoading = false
     })
     builder.addCase(fetchCatalogItems.pending, (state) => {
       state.isLoading = true
+    })
+    builder.addCase(fetchMoreCatalogItems.fulfilled, (state, { payload }) => {
+      state.catalogItems = state.catalogItems.concat(payload)
+      state.isLoading = false
     })
   }
 })

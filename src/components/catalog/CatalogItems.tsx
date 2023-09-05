@@ -15,8 +15,8 @@ const CatalogItems: React.FC<catalogItemsProps> = ({catalogItems, isLoading}) =>
   return (
     <div className='catalog__items'>
       {
-        isLoading? [...new Array(15)].map((item, i) => (
-          <CatalogItemLoader key={i}/>
+        isLoading? [...new Array(12)].map((item, i) => (
+          <div key={i} className="catalog__item catalog__item-loader"></div>
         )):
         catalogItems.map(item => (
           <CatalogItem {...item} key={item.id}/>

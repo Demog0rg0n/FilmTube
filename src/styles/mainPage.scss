@@ -12,9 +12,15 @@
 .swiper-title{
     margin-bottom: 10px;
 }
+// .swipers__container .swipers__block:nth-child(1) {
+//     max-width: calc(100% - 440px);
+
+// }
+.recomendations__block{
+    max-width: calc(100% - 440px);
+}
 .recomendations-swiper {
     width: 100%;
-    max-width: 720px;
 }
 .recomendation__item {
     position: relative;
@@ -146,6 +152,9 @@
     .top10-item{
         max-width: initial;
     }
+    .recomendations__block{
+        max-width: initial;
+    }
 }
 @media (max-width: 768px) {
     .top10-swipers{
@@ -154,7 +163,6 @@
     .top10-swipers .swipers__block{
         width: 100%;
     }
-
     .categories__list li{
         width: 100%;
     }
