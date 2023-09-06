@@ -33,7 +33,7 @@ const Menu: React.FC = () => {
             <ul>
               {
                 navItems.map((navItem) => (
-                  <li><Link to={"/catalog"} onClick={() => navItemClick(navItem.value)}>{navItem.name}</Link></li>
+                  <li key={navItem.name}><Link to={"/catalog"} onClick={() => navItemClick(navItem.value)}>{navItem.name}</Link></li>
                 ))
               }
             </ul>

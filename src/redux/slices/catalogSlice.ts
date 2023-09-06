@@ -15,6 +15,7 @@ type catalogItemsSliceState = {
   catalogTypeState: catalogTypeState;
   pageState: number;
   isLoading: boolean;
+  moreIsLoading: boolean,
   pagesCounter: number
 }
 
@@ -24,6 +25,7 @@ const initialState: catalogItemsSliceState = {
   catalogTypeState: "movie",
   pageState: 1,
   isLoading: true,
+  moreIsLoading: false,
   pagesCounter: 1,
 }
 
@@ -63,9 +65,12 @@ export const catalogSlice = createSlice({
     builder.addCase(fetchCatalogItems.pending, (state) => {
       state.isLoading = true
     })
+    builder.addCase(fetchMoreCatalogItems.pending, (state) => {
+      state.moreIsLoading = true
+    })
     builder.addCase(fetchMoreCatalogItems.fulfilled, (state, { payload }) => {
       state.catalogItems = state.catalogItems.concat(payload)
-      state.isLoading = false
+      state.moreIsLoading = false
     })
   }
 })

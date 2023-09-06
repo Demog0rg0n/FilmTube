@@ -158,15 +158,35 @@ h1, h2, h3, h4, h5, h6{
     font-weight: 600;
     text-align: center;
     width: 200px;
+    cursor: pointer;
 }
 
 .catalog__item-loader{
-    background-color: #3f3f3f;
+    background: linear-gradient(130deg, #3f3f3f 30%, #636363 50%, #3f3f3f 70%);
+    background-size: 200% 200%;
+    -webkit-animation: Animation 5s ease infinite;
+    -moz-animation: Animation 5s ease infinite;
+    animation: Animation 5s ease infinite;
 }
-
 
 .hidden {
     visibility: hidden;
+}
+
+@-webkit-keyframes Animation {
+    0%{background-position:10% 0%}
+    50%{background-position:91% 100%}
+    100%{background-position:10% 0%}
+}
+@-moz-keyframes Animation {
+    0%{background-position:10% 0%}
+    50%{background-position:91% 100%}
+    100%{background-position:10% 0%}
+}
+@keyframes Animation { 
+    0%{background-position:10% 0%}
+    50%{background-position:91% 100%}
+    100%{background-position:10% 0%}
 }
 
 

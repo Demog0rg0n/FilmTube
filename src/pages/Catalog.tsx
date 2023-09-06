@@ -12,7 +12,7 @@ import { url } from 'inspector'
 
 const Catalog: React.FC = () =>  {
 
-  const { catalogItems, sortState, catalogTypeState, pageState, isLoading } = useAppSelector(state => state.catalogSlice)
+  const { catalogItems, sortState, catalogTypeState, pageState, isLoading, moreIsLoading } = useAppSelector(state => state.catalogSlice)
 
   const dispatch = useAppDispatch()
 
@@ -38,7 +38,7 @@ const Catalog: React.FC = () =>  {
               <Sort />
             </div>
 
-            <CatalogItems catalogItems={catalogItems} isLoading={isLoading}/>
+            <CatalogItems catalogItems={catalogItems} isLoading={isLoading} moreIsLoading={moreIsLoading}/>
             <MoreCatalogItems url={url} />
         </div>
     </section>

@@ -1,6 +1,6 @@
 import React from 'react'
 import { useSelector, useDispatch } from 'react-redux'
-import { setSortState, sortStateType } from '../../redux/slices/catalogSlice'
+import { setPage, setSortState, sortStateType } from '../../redux/slices/catalogSlice'
 import { RootState } from '../../redux/store'
 
 const Sort = () => {
@@ -26,6 +26,7 @@ const Sort = () => {
             <li key={index + 1} onClick={(e) => {
               dispatch(setSortState(item))
               setSortOpened(false)
+              dispatch(setPage(1))
             }}>{item.name}</li>
           ))}
         </ul>
