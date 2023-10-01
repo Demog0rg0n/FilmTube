@@ -9,12 +9,12 @@ import { catalogItemProps } from '../../catalog/CatalogItem'
 import { Link } from 'react-router-dom'
 
 type top10SwiperProps = {
-    items :catalogItemProps[]
+    items? :catalogItemProps[]
 }
 
 const Top10Swiper: React.FC<top10SwiperProps> = (props) => {
 
-    console.log(props.items)
+    // console.log(props.items)
 
   return (
     <Swiper
@@ -27,7 +27,7 @@ const Top10Swiper: React.FC<top10SwiperProps> = (props) => {
     >
         {
             props.items &&
-            props.items.map((item,index) => (
+            props.items.map((item, index) => (
                 <SwiperSlide key={index}>
                     <div className="top10-item">
                         <img src={item.poster?.url} alt="" className="top10-item__img"/>

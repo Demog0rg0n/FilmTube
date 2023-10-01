@@ -31,14 +31,12 @@ const Index:React.FC = () => {
         <div className="swipers__block">
             <h2 className="swiper-title">Топ 10 фильмов</h2>
             {
-                films &&
                 <Top10Swiper items={films}/>
             }
         </div>
         <div className="swipers__block">
             <h2 className="swiper-title">Топ 10 сериалов</h2>
             {
-                serials &&
                 <Top10Swiper items={serials}/>
             }
         </div>
