@@ -4,8 +4,6 @@ import MainPage from './pages/MainPage';
 import Header from './components/header/Header';
 import Catalog from './pages/Catalog';
 import CatalogItemPage from './pages/CatalogItemPage';
-import Menu from './components/Menu';
-import Popup from './components/Popup';
 import { useAppDispatch } from './redux/store';
 import { setUser } from './redux/slices/userSlice';
 import axios from 'axios';
@@ -32,8 +30,6 @@ function App() {
   return (
     <div className="App">
       <Header />
-      {/* <Popup /> */}
-      {/* <Menu /> */}
       <Routes>
         <Route path="/" element={<MainPage />} />
         <Route path="/catalog/" element={<Catalog />} />

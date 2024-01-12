@@ -78,46 +78,7 @@ const CatalogItemPage: React.FC = () => {
 
   }, [id])
 
-
-  // console.log(info)
-
   return (
-  // !info?
-  //   <main className="catalog-item-page">
-  //     <div className={`catalog-item-page__content container ${info.backdrop?.url && `catalog-item-page__content_with-backdrop`}`}>
-        
-  //         {
-  //         info.backdrop &&
-  //         <div className="backdrop">
-  //           <div className="backdrop-gradient"></div>
-  //           <img src={info.backdrop.url} alt="" />
-  //         </div>
-  //         }
-        
-  //         <div className="catalog-item-page__left">
-  //           <img src={info.poster.previewUrl} alt="" />
-  //           <Info {...info} />
-  //           <Frames movieId={info.id}/>
-  //         </div>
-
-  //         <div className="catalog-item-page__right">
-  //           <h1 className="name">{info.name + ` (${info.year})`}</h1>
-  //           <h2 className='alternativeName'>{info.alternativeName}</h2>
-  //           <p className="description">{info.description}</p>
-  //           {info.watchability.items.length > 1 && <Watchability {...info.watchability} />}
-  //           {
-  //             info.videos?.trailers && <Trailer trailers = {info.videos.trailers}/>
-  //           }
-  //           {
-  //             info.persons && <PersonsSwiper persons = {info.persons.slice(0, 10)} />
-  //           }
-            
-  //           <Reviews movieId={info.id}/>
-  //         </div>
-
-  //       </div>
-  //     {info.similarMovies?.length && <SimilarMovies similarMovies={info.similarMovies} />}
-  //   </main>: 
     
   <>
     {
@@ -154,6 +115,10 @@ const CatalogItemPage: React.FC = () => {
             </div>
         </section>
         <Reviews movieId={info.id}/>
+        {
+          info.similarMovies && <SimilarMovies similarMovies={info.similarMovies} />
+        }
+        
     </main>
     }
     

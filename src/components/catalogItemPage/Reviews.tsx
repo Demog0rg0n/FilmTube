@@ -33,7 +33,6 @@ const Reviews: React.FC<CommentsProps> = ({movieId}) => {
         fetchReviews()
     }, [movieId])
 
-
   return (
     <section className="reviews">
         <div className="reviews__container container">

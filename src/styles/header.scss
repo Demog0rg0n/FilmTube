@@ -124,13 +124,13 @@ input:focus{
     top: 79px;
     right: -310px;
     background-color: #292929;
-    height: calc(100vh - 89px);
+    height: calc(100dvh - 89px);
     z-index: 100;
     flex-direction: column;
     padding: 20px;
     gap: 20px;
     align-items: flex-end;
-    transition: .1s linear;
+    transition: right .1s linear;
 }
 .menu.active{
     right: 0;
@@ -175,23 +175,18 @@ input:focus{
     display: none;
 }
 @media (max-width: 670px) {
-    .menu-button{
-        
-    }
     .menu{
         position: fixed;
         top: 79px;
         right: -310px;
         background-color: #292929;
-        height: calc(100vh - 89px);
+        height: calc(100dvh - 89px);
         z-index: 100;
         flex-direction: column;
         padding: 20px;
         gap: 20px;
         align-items: flex-end;
-        transition: .1s linear;
     }
-    
 
     .navigation{
         display: block;
