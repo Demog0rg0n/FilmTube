@@ -23,6 +23,11 @@ const Reviews: React.FC<CommentsProps> = ({movieId}) => {
     const [reviews, setReviews] = React.useState<commentType[]>([])
     const [reviewsFull, setReviewsFull] = React.useState(false)
 
+    function reviewsHandler() {
+        setReviewsFull(true)
+        document.body.classList.add("overflow-hidden")
+    }
+
 
     React.useEffect(() => {
         async function fetchReviews() {
@@ -53,7 +58,7 @@ const Reviews: React.FC<CommentsProps> = ({movieId}) => {
             >
                 { 
                     reviews.map(review => (
-                        <SwiperSlide key={review.id} onClick={() => setReviewsFull(true)}>
+                        <SwiperSlide key={review.id} onClick={() => reviewsHandler()}>
                             <div className="review">
                                 <div className="review__header">
                                     <h3 className="review__author">{review.author}</h3>

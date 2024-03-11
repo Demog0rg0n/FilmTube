@@ -61,6 +61,7 @@
     width: 100%;
     background-color: #292929;
     border-radius: 10px;
+    min-height: 220px;
 }
 .top10-item {
     height: 220px;
@@ -189,6 +190,7 @@
     }
     .top10-swiper,
     .top10-item{
+        min-height: 190px;
         height: 190px;
     }
     .top10-item__title{

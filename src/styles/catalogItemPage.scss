@@ -169,16 +169,13 @@
     scrollbar-width: 5px;
     scrollbar-color: #626262 #3c3c3c;
     height: 100%;
-    border-radius: 20px;
 }
-.full-reviews::-webkit-scrollbar{
-    width: 5px;
-}
-.full-reviews::-webkit-scrollbar-track{
+.full-reviews__items::-webkit-scrollbar{
     background-color: #626262;
     border-radius: 10px;
+    width: 5px;
 }
-.full-reviews::-webkit-scrollbar-thumb{
+.full-reviews__items::-webkit-scrollbar-thumb{
     background-color: #3c3c3c;
     border-radius: 10px;
 }
